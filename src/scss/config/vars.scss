@@ -1,0 +1,101 @@
+$siteResolution: 1px;
+$mainFont: 'Manrope';
+$accentFont: 'Igra Sans';
+$mainWeight: 400;
+$lineHeight1: 1.3;
+$lineHeight2: 1.25;
+$lineHeight3: 1.2;
+$lineHeight4: 1;
+$lineHeight5: 1.35714285714;
+$lineHeightDefault: $lineHeight1;
+
+$containerWidthMd: 1248rem;
+
+$gap: 12rem;
+$gapFluid: 24rem;
+
+$radiusXs: 4rem;
+$radiusSm: 8rem;
+$radiusSemi: 10rem;
+$radiusMd: 15rem;
+
+$whiteColor: #ffffff;
+$blackColor: #121212;
+$blackFullColor: #000000;
+$greyLightColor: #EDEDED;
+$greyDarkColor: #4E4E4E;
+$greyMediumColor: #B0B0B0;
+$greySemiColor: #AEAEAE;
+$greyNeutralColor: #9A9A9A;
+$greyNormalColor: #E5E5E5;
+$greyBolderColor: #E9E9E9;
+$oliveColor: #6A704C;
+$redColor: #D92D20;
+$beigeColor: #EDE1D1;
+$beigeLightColor: #F5F3F0;
+$beigeDarkColor: #412E27;
+$accentColor: $beigeDarkColor;
+
+$bgSite: $beigeColor;
+
+$gradientBeige1: linear-gradient(270deg, rgba($beigeColor, 0) 0%, $beigeColor 92.67%);
+$gradientBlack1: linear-gradient(90deg, rgba($blackFullColor, 0) 0%, rgba($blackFullColor, 1) 50%, rgba($blackFullColor, 0) 100%);
+$gradientWhite1: linear-gradient(90deg, rgba($whiteColor, 0) 5%, rgba($whiteColor, 1) 50%, rgba($whiteColor, 0) 95%);
+
+$fontFamily: $mainFont, Open Sans, sans-serif, Arial;
+$fontAccentFamily: $accentFont, $mainFont, sans-serif, Arial;
+$fontColor: $beigeDarkColor;
+$fontWeight: $mainWeight;
+
+$transition: all .4s 0ms;
+
+$xl: 1340px;
+$xl-mf: $xl + 1;
+
+$lg: 1199px;
+$lg-mf: $lg + 1;
+
+$md: 991px;
+$md-mf: $md + 1;
+
+$sm: 767px;
+$sm-mf: $sm + 1;
+
+$xs: 576px;
+$xs-mf: $xs + 1;
+
+:root {
+  --fs-default: 16rem;
+  --fs-1: 54rem;
+  --fs-2: 40rem;
+  --fs-3: 24rem;
+  --fs-4: 20rem;
+  --fs-5: 18rem;
+  --fs-6: 16rem;
+  --fs-7: 14rem;
+  --fs-8: 12rem;
+  --fs-9: 10rem;
+
+  --gap: 12rem;
+  --gap-: -12rem;
+  --gap-fluid: 24rem;
+  --gap-fluid-: -24rem;
+  --gap-container: var(--gap-fluid);
+  --gap-container-: var(--gap-fluid-);
+
+  --scroll-offset: 90rem;
+
+  --header-size: var(--scroll-offset);
+
+  --vh: 1vh;
+  @media (max-width: $lg) {
+    --fs-1: 30rem;
+    --fs-2: 30rem;
+
+    --scroll-offset: 64rem;
+  }
+  @media (max-width: $sm) {
+    --gap-container: 16rem;
+    --gap-container-: -16rem;
+  }
+}

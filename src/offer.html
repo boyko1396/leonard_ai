@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('html/head.html', {
+    'title': 'Leonard AI - Offer'
+  })
+  <body class="u-scrollbar">
+
+    <div id="root" class="site">
+      <div class="site__inner">
+        <!-- header BEGIN -->
+        @@include('html/components/header-page.html', {
+          'el': 'site__header'
+        })
+        <!-- header END -->
+        <main role="main" class="site__main">
+          <!-- breadcrumbs-page BEGIN -->
+          <section class="breadcrumbs-page">
+            <div class="container container--size-md breadcrumbs-page__container">
+              <div class="u-breadcrumbs breadcrumbs-page__el">
+                <ul class="u-breadcrumbs__list" itemscope itemtype="https://schema.org/BreadcrumbList">
+                  <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a href="/" itemprop="item">
+                      <span itemprop="name">Главная</span>
+                    </a>
+                    <meta itemprop="position" content="1">
+                  </li>
+                  <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span itemprop="name">Договор оферты</span>
+                    <meta itemprop="position" content="2">
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <!-- breadcrumbs-page END -->
+          <!-- layout BEGIN -->
+          <section class="layout">
+            <div class="container container--size-md layout__container">
+              <h1 class="layout__title">Договор оферты</h1>
+              <div class="layout__privacy">
+                <div class="row layout__privacy-row">
+                  <div class="row__col--10 layout__privacy-col">
+                    <div class="u-content layout__text">
+                      <p>Текст договора оферты</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- layout END -->
+        </main>
+        <!-- footer BEGIN -->
+        @@include('html/components/footer-page.html', {
+          'el': 'site__footer'
+        })
+        <!-- footer END -->
+      </div>
+      @@include('html/modal.html')
+    </div>
+
+    @@include('html/script.html')
+  </body>
+</html>

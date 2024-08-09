@@ -1,0 +1,37 @@
+.intro {
+  padding: 154rem 0 160rem;
+  color: $whiteColor;
+  position: relative;
+  @media (max-width: $lg) {
+    padding: 134rem 0 140rem;
+  }
+  &__bg {
+    @extend %img-cover, %bg-overlay;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &__container {
+  }
+  &__content {
+    max-width: 900rem;
+  }
+  &__title {
+    margin: 0 0 18rem;
+  }
+  &__subtitle {
+    max-width: 680rem;
+    margin: 0 0 24rem;
+    font-size: var(--fs-3);
+    line-height: $lineHeight1;
+    font-family: $fontFamily;
+    @media (max-width: $lg) {
+      font-size: 20rem;
+      color: rgba($whiteColor, .75);
+    }
+  }
+  &__btn {
+  }
+}

@@ -1,0 +1,39 @@
+.templates {
+  background: $accentColor;
+  padding: 94rem 0 100rem;
+  color: $whiteColor;
+  position: relative;
+  @media (max-width: $lg) {
+    padding: 74rem 0 80rem;
+  }
+  &__container {
+  }
+  &__title {
+    max-width: 474rem;
+    margin: 0 auto 55rem;
+    text-align: center;
+    @media (max-width: $lg) {
+      max-width: 344rem;
+      margin-bottom: 36rem;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: $radiusXs;
+    overflow: hidden;
+    &-card {
+      max-width: 50%;
+      flex: 0 0 50%;
+      @media (max-width: $md) {
+        max-width: 100%;
+        flex-basis: 100%;
+      }
+      &:not(:last-child) {
+        @media (max-width: $xs) {
+          margin-bottom: 24rem;
+        }
+      }
+    }
+  }
+}

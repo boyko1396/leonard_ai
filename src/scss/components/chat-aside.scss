@@ -1,0 +1,214 @@
+.chat-aside {
+  background: $whiteColor;
+  display: flex;
+  flex-direction: column;
+  font-size: var(--fs-7);
+  color: $blackColor;
+  border-radius: $radiusSemi;
+  @media (max-width: $lg) {
+    background: $beigeLightColor;
+    border-radius: 0;
+  }
+  &__header {
+    padding: var(--gap-fluid) 16rem 0;
+    flex-shrink: 0;
+    @media (max-width: $lg) {
+      padding-top: 24rem;
+    }
+    > :last-child {
+      margin-bottom: 0;
+    }
+    &-mobile {
+      margin: 0 0 16rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &-logo {
+        width: 80rem;
+        flex: 0 0 80rem;
+      }
+      &-toggle {
+        @extend %area-click, %btn-reset;
+        @media (max-width: $lg) {
+          width: 24rem;
+          height: 24rem;
+          margin: 0;
+          display: flex;
+          flex-shrink: 0;
+          color: $greyDarkColor;
+          position: relative;
+          transition: $transition;
+        }
+        .u-icon {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+    &-tab-nav {
+      margin-top: 8rem !important;
+    }
+  }
+  &__title {
+  }
+  &__hr {
+    background: $blackFullColor;
+    background: $gradientBlack1;
+    width: 100%;
+    height: 1px;
+    margin: 16rem 0;
+    display: block;
+    border: none;
+    outline: none;
+    opacity: .25;
+  }
+  &__action {
+    &-btn {
+      width: 100%;
+      justify-content: flex-start;
+      @media (max-width: $lg) {
+      }
+      &:hover {
+        @media (min-width: $lg-mf) {
+          background: $beigeColor;
+          color: $accentColor;
+          border-color: $beigeColor;
+        }
+      }
+      &.is-active {
+        background: $beigeColor;
+        color: $accentColor;
+        border-color: $beigeColor;
+      }
+      &--new-chat {
+        width: 100%;
+        padding-right: 11rem;
+        padding-left: 11rem;
+      }
+      &--settings {
+        width: 100%;
+        padding-right: 11rem;
+        padding-left: 11rem;
+        @media (max-width: $lg) {
+          width: auto;
+        }
+      }
+      &--exit {
+        @media (max-width: $lg) {
+          width: auto;
+          margin-top: 10rem !important;
+        }
+      }
+    }
+  }
+  &__body {
+    margin: 16rem 0;
+    flex: 1 1 0;
+    @media (max-width: $lg) {
+      margin: 24rem 0;
+    }
+    &-inner {
+      padding: 0 16rem;
+    }
+    &-history {
+      &:not(.is-show) {
+        display: none;
+      }
+      &-item {
+        &:not(:last-child) {
+          margin-bottom: 24rem;
+        }
+        &-title {
+          margin: 0 0 12rem;
+          font-weight: bold;
+          font-size: var(--fs-8);
+          line-height: 1;
+          color: $greySemiColor;
+        }
+        &-list {
+        }
+        &-card {
+          &:not(:last-child) {
+            margin-bottom: 12rem;
+          }
+        }
+      }
+    }
+  }
+  &__nav {
+    font-weight: bold;
+    line-height: $lineHeight5;
+    &-list {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+    &-item {
+      margin: 0;
+      padding: 0;
+    }
+    &-link {
+      @extend %btn-reset;
+      width: 100%;
+      padding: 8rem 16rem;
+      display: block;
+      font-weight: inherit;
+      font-size: inherit;
+      text-align: left;
+      border-radius: $radiusXs;
+      cursor: pointer;
+      transition: $transition;
+      &:hover {
+        text-decoration: none;
+        @media (min-width: $lg-mf) {
+          background: $beigeColor;
+        }
+      }
+      &.is-active {
+        background: $beigeColor;
+      }
+    }
+  }
+  &__footer {
+    padding: 0 16rem var(--gap-fluid);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    @media (max-width: $lg) {
+      padding-bottom: 24rem;
+      align-items: flex-start;
+    }
+    > :last-child {
+      margin-top: 0;
+    }
+  }
+  &__tab {
+    &-content {
+      &:not([data-tab-content-aside="aside-tools"]) {
+        @media (min-width: $lg-mf) {
+          display: none;
+        }
+      }
+      &:not(.is-show) {
+        @media (max-width: $lg) {
+          display: none;
+        }
+      }
+      &.tab-nav {
+        margin-top: 8rem !important;
+      }
+    }
+  }
+  &__subtab {
+    &-content {
+      &:not(.is-show) {
+        @media (max-width: $lg) {
+          display: none;
+        }
+      }
+    }
+  }
+}

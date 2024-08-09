@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('html/head.html', {
+    'title': 'Leonard AI - Restore'
+  })
+  <body class="u-scrollbar">
+
+    <div id="root" class="site">
+      <div class="site__inner">
+        <section class="auth-layout site__auth">
+          <div class="auth-layout__row">
+            <div class="auth-layout__col auth-layout__col--content">
+              @@include('html/components/auth-aside-2.html', {
+                'class': 'Восстановление пароля'
+              })
+            </div>
+            <div class="auth-layout__col auth-layout__col--form">
+              <div class="auth-layout__main">
+                <div class="login-block auth-layout__main-registration">
+                  <div class="login-block__inner">
+                    <p class="fs-2 login-block__title">Восстановление пароля</p>
+                    <p class="login-block__suptitle">Введите адрес электронной почты, который вы&nbsp;использовали при регистрации, и&nbsp;мы вышлем вам&nbsp;ссылку для сброса пароля</p>
+                    <form action="#" class="login-block__form">
+                      <div class="u-input login-block__form-input">
+                        <label class="u-input__label">
+                          <input type="email" name="email" class="u-input__el u-input__el--size-md u-input__el--theme-grey-outline" required placeholder="Ваш e-mail">
+                        </label>
+                      </div>
+                      <footer class="login-block__form-footer">
+                        <button type="submit" class="btn btn--size-sl btn--theme-accent login-block__form-btn" disabled>
+                          <span class="btn__inner">
+                            <span class="btn__title">Отправить</span>
+                          </span>
+                        </button>
+                      </footer>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    @@include('html/script.html')
+  </body>
+</html>

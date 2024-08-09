@@ -1,0 +1,35 @@
+.layout {
+  background: $beigeColor;
+  padding: 40rem 0;
+  color: $accentColor;
+  @media (max-width: $lg) {
+    padding-top: 68rem;
+    padding-bottom: 74rem;
+  }
+  &__container {
+  }
+  &__title {
+    margin: 0 0 24rem;
+    @media (max-width: $lg) {
+      margin-bottom: 20rem;
+      font-size: var(--fs-3);
+    }
+  }
+  &__privacy {
+    &-row {
+    }
+    &-col {
+      @media (max-width: $lg) {
+        max-width: 100%;
+        flex-basis: 100%;
+      }
+    }
+  }
+  &__text {
+    font-size: var(--fs-5);
+    color: $greyDarkColor;
+    @media (max-width: $lg) {
+      font-size: var(--fs-default);
+    }
+  }
+}

@@ -1,0 +1,45 @@
+.footer {
+  background: $oliveColor;
+  padding: 84rem 0;
+  color: $whiteColor;
+  @media (max-width: $lg) {
+    padding: 98rem 0 64rem;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (max-width: $lg) {
+      align-items: flex-start;
+    }
+  }
+  &__logo {
+    margin: 0 0 28rem;
+    @media (max-width: $lg) {
+      width: 100%;
+      max-width: 330rem;
+      margin-bottom: 46rem;
+    }
+  }
+  &__nav {
+    margin: 0 0 14rem;
+    @media (max-width: $lg) {
+      margin-bottom: 40rem;
+      font-size: 14rem;
+    }
+  }
+  &__nav-sub {
+    margin: 0 0 28rem;
+    font-size: var(--fs-8);
+    color: $greyMediumColor;
+    @media (max-width: $lg) {
+      margin-bottom: 32rem;
+      font-size: 12rem;
+    }
+  }
+  &__copyright {
+    margin: 0;
+    font-size: var(--fs-8);
+    color: $greyMediumColor;
+  }
+}

@@ -1,0 +1,48 @@
+.how-works {
+  padding: 100rem 0;
+  position: relative;
+  @media (max-width: $lg) {
+    padding: 74rem 0 80rem;
+  }
+  &__container {
+  }
+  &__title {
+    margin: 0 0 48rem;
+    text-align: center;
+  }
+  &__list {
+    margin-bottom: 72rem;
+    &-row {
+      margin-bottom: var(--gap-fluid-);
+      justify-content: center;
+    }
+    &-col {
+      margin-bottom: var(--gap-fluid);
+      @media (max-width: $md) {
+        max-width: 50%;
+        flex-basis: 50%;
+      }
+      @media (max-width: $sm) {
+        max-width: 100%;
+        flex-basis: 100%;
+      }
+    }
+    &-card {
+      height: 100%;
+    }
+  }
+  &__request {
+    &-title {
+      margin: 0 0 24rem;
+      text-align: center;
+    }
+    &-marquee {
+      margin: 0 0 48rem;
+    }
+    &-footer {
+        text-align: center;
+      &-btn {
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.target-audience {
+  background: $accentColor;
+  padding: 94rem 0 100rem;
+  color: $whiteColor;
+  position: relative;
+  @media (max-width: $lg) {
+    padding: 74rem 0 80rem;
+  }
+  &__title {
+    margin: 0 0 54rem;
+    text-align: center;
+    @media (max-width: $lg) {
+      margin-bottom: 48rem;
+    }
+  }
+  &__list {
+    &-row {
+      margin-bottom: var(--gap-fluid-);
+      @media (max-width: $sm) {
+        margin-bottom: -12rem;
+      }
+    }
+    &-col {
+      margin-bottom: var(--gap-fluid);
+      @media (max-width: $sm) {
+        max-width: 100%;
+        margin-bottom: 12rem;
+        flex-basis: 100%;
+      }
+    }
+    &-card {
+      height: 100%;
+    }
+  }
+}

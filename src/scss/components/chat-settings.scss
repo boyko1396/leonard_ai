@@ -1,0 +1,299 @@
+.chat-settings {
+  display: flex;
+  flex-direction: column;
+  &__body {
+    overflow: auto;
+    overflow-x: hidden;
+  }
+  &__title {
+    margin: 0 0 24rem;
+    &,
+      &:not(:focus):not(:focus-within) {
+      @media (min-width: $lg-mf) {
+        width: 1px!important;
+        height: 1px!important;
+        margin: -1px!important;
+        padding: 0!important;
+        position: absolute!important;
+        border: 0!important;
+        clip: rect(0,0,0,0)!important;
+        white-space: nowrap!important;
+        overflow: hidden!important;
+      }
+    }
+  }
+  &__row {
+  }
+  &__col {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--gap-fluid);
+    &--settings {
+      @media (max-width: $lg) {
+        max-width: 100%;
+        margin-bottom: var(--gap-fluid);
+        flex-basis: 100%;
+      }
+    }
+    &--subscription {
+      @media (max-width: $lg) {
+        max-width: 100%;
+        margin-bottom: var(--gap-fluid);
+        flex-basis: 100%;
+      }
+    }
+    &--faq {
+    }
+  }
+  &__box {
+    padding: 24rem 16rem;
+    color: $blackColor;
+    border: 1px solid $greySemiColor;
+    border-radius: $radiusSemi;
+    @media (max-width: $lg) {
+      padding: 24rem 16rem;
+    }
+    &--profile {
+    }
+    &--whatsapp {
+    }
+    &--useful {
+      height: 100%;
+    }
+    &--subscription {
+    }
+    &--support {
+      height: 100%;
+    }
+    &--faq {
+      margin-top: var(--gap-fluid);
+      @media (max-width: $lg) {
+        margin-top: 0;
+      }
+    }
+    &-header {
+      margin: 0 0 24rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @media (max-width: $lg) {
+        margin-bottom: 12rem;
+      }
+      @media (max-width: $md) {
+        flex-wrap: wrap;
+      }
+      &-title {
+        margin: 0;
+        color: $beigeDarkColor;
+        @media (max-width: $md) {
+          width: 100%;
+        }
+      }
+      &-plan {
+        display: flex;
+        flex-shrink: 0;
+        @media (max-width: $md) {
+          margin: 12rem -3rem 0 0;
+          justify-content: flex-end;
+          font-size: var(--fs-4);
+          flex-grow: 1;
+        }
+        &-name {
+          margin: 0 0 0 39rem;
+          font-weight: 600;
+          font-size: var(--fs-5);
+          @media (max-width: $md) {
+            margin-left: 15rem;
+            font-weight: bold;
+            font-size: var(--fs-6);
+          }
+          &.is-free {
+            color: $greyDarkColor;
+          }
+          &.is-pro {
+            color: $oliveColor;
+          }
+        }
+      }
+    }
+    &-profile {
+    }
+    &-whatsapp {
+    }
+    &-hr {
+      background: $greyDarkColor;
+      height: 1px;
+      width: 100%;
+      margin-top: 12rem;
+      display: block;
+      border: none;
+      outline: none;
+    }
+    &-item {
+      & + & {
+        margin-top: 8rem;
+      }
+      &-el {
+        max-width: 100%;
+      }
+      &-title {
+        margin: 0 0 4rem;
+        font-weight: bold;
+        color: $greySemiColor;
+      }
+      &-text {
+        margin: 0;
+        font-weight: bold;
+        color: $greyDarkColor;
+      }
+      &-change {
+        margin-top: 12rem;
+        vertical-align: top;
+      }
+      &-status {
+        margin: 0;
+        font-weight: bold;
+        &.is-disabled {
+          color: $redColor;
+        }
+      }
+    }
+    &-footer {
+      padding: 12rem 0 0;
+      &-action {
+      }
+      &-description {
+        max-width: 144rem;
+        height: 100%;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        font-size: var(--fs-6);
+        line-height: $lineHeight4;
+        color: $greyDarkColor;
+        @media (max-width: $sm) {
+          max-width: 194rem;
+        }
+      }
+      .chat-settings__box-item-title {
+        margin-top: 12rem;
+        @media (max-width: $lg) {
+          margin-top: 0;
+        }
+      }
+    }
+    &-links {
+      &:not(:last-child) {
+        margin-bottom: 12rem;
+      }
+      &-title {
+        margin: 0 0 12rem;
+      }
+    }
+    &-support {
+      &-text {
+        margin: 8rem 0 12rem;
+        font-size: var(--fs-7);
+        line-height: $lineHeight3;
+        color: $greyDarkColor;
+      }
+    }
+    &-faq {
+      margin-top: -12rem;
+      @media (max-width: $lg) {
+        margin-top: 4rem;
+      }
+      &-card {
+      }
+    }
+    &-plan {
+      &-list {
+        &-card {
+          margin-bottom: 24rem;
+          @media (max-width: $md) {
+            margin-bottom: 12rem;
+          }
+        }
+      }
+    }
+    &-subscription {
+      &-row {
+        margin: 36rem -6rem 24rem;
+        display: flex;
+        @media (max-width: $md) {
+          margin-top: 24rem;
+          margin-bottom: 32rem;
+        }
+      }
+      &-col {
+        max-width: 50%;
+        padding: 0 6rem;
+        flex: 0 0 50%;
+      }
+      &-card {
+        height: 100%;
+      }
+      &-btn {
+        &-none {
+          @media (max-width: $lg) {
+            margin-top: 12rem;
+          }
+        }
+      }
+      &-footer {
+        margin-top: 12rem;
+        display: flex;
+        flex-direction: column;
+        font-size: var(--fs-7);
+        color: $greyDarkColor;
+        @media (max-width: $md) {
+          margin-top: 8rem;
+        }
+        &-privacy {
+          margin: 0;
+          padding: 0;
+          display: flex;
+          list-style-type: none;
+          font-weight: bold;
+          li {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            &:not(:last-child) {
+              &:after {
+                margin: 0 4rem;
+                content: '\007C';
+                flex-shrink: 0;
+              }
+            }
+          }
+          a {
+            transition: $transition;
+            &:hover {
+              text-decoration: none;
+              @media (min-width: $lg-mf) {
+                color: $greyMediumColor;
+              }
+            }
+          }
+        }
+        &-desc {
+          margin: 8rem 0 0;
+          line-height: $lineHeight3;
+          @media (max-width: $md) {
+            margin: 0 0 4rem;
+            order: -1;
+          }
+        }
+      }
+    }
+    &-description {
+      font-size: var(--fs-7);
+      color: $greyDarkColor;
+    }
+    &-description + .chat-settings__box-footer-action {
+      margin-top: 12rem;
+    }
+  }
+}

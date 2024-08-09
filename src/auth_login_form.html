@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('html/head.html', {
+    'title': 'Leonard AI - Login form'
+  })
+  <body class="u-scrollbar">
+
+    <div id="root" class="site">
+      <div class="site__inner">
+        <section class="auth-layout site__auth">
+          <div class="auth-layout__row">
+            <div class="auth-layout__col auth-layout__col--content">
+              @@include('html/components/auth-aside-2.html', {
+                'class': 'Войдите в свой аккаунт'
+              })
+            </div>
+            <div class="auth-layout__col auth-layout__col--form">
+              <div class="auth-layout__main">
+                <div class="login-block auth-layout__main-registration">
+                  <div class="login-block__inner">
+                    <p class="fs-2 login-block__title">Войдите<br>в свой аккаунт</p>
+                    <p class="color-grey-dark login-block__subtitle"><strong>Войдите через электронную почту</strong></p>
+                    <form action="#" class="login-block__form">
+                      <div class="u-input login-block__form-input">
+                        <label class="u-input__label">
+                          <input type="email" name="email" class="u-input__el u-input__el--size-md u-input__el--theme-grey-outline" required placeholder="mail@example.com">
+                        </label>
+                      </div>
+                      <div class="u-input login-block__form-input">
+                        <label class="u-input__label">
+                          <input type="password" name="password" class="u-input__el u-input__el--size-md u-input__el--theme-grey-outline" required placeholder="Пароль">
+                        </label>
+                      </div>
+                      <p class="login-block__form-help">
+                        <a href="auth_restore.html"><strong>Забыли пароль?</strong></a>
+                      </p>
+                      <footer class="login-block__form-footer">
+                        <button type="submit" class="btn btn--size-sl btn--theme-accent login-block__form-btn" disabled>
+                          <span class="btn__inner">
+                            <span class="btn__title">Войти</span>
+                          </span>
+                        </button>
+                      </footer>
+                    </form>
+                    <div class="u-content form-appeal login-block__appeal-login">
+                      <p>Нет аккаунта? <a href="auth_registration.html"><strong>Зарегистрироваться</strong></a></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    @@include('html/script.html')
+  </body>
+</html>

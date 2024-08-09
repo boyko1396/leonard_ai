@@ -1,0 +1,105 @@
+.header-chat {
+  background: $accentColor;
+  padding: var(--gap-container) 0;
+  color: $whiteColor;
+  border-radius: $radiusSemi;
+  @media (max-width: $lg) {
+    padding: 20rem 0;
+    border-radius: 0;
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    @media (max-width: $lg) {
+      padding-right: 16rem;
+      padding-left: 16rem;
+      justify-content: space-between;
+    }
+  }
+  &__col {
+    @media (max-width: $lg) {
+      display: none;
+    }
+    &--logo,
+    &--action {
+      max-width: 23%;
+      flex-basis: 23%;
+      flex-shrink: 0;
+    }
+    &--logo {
+    }
+    &--center {
+      padding: 0 var(--gap-fluid);
+      flex-grow: 1;
+    }
+    &--action {
+    }
+  }
+  &__logo {
+  }
+  &__breadcrumbs {
+    display: flex;
+    justify-content: center;
+  }
+  &__router {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    &-item {
+      margin: 0;
+      padding: 0;
+      &:not(:last-child) {
+        margin-right: 12rem;
+      }
+    }
+  }
+  &__toggle {
+    @extend %area-click, %btn-reset;
+    @media (max-width: $lg) {
+      width: 24rem;
+      height: 24rem;
+      margin: 0;
+      display: flex;
+      flex-shrink: 0;
+      position: relative;
+      transition: $transition;
+    }
+    .u-icon {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    &.js-header-chat-toggle-open {
+      &:before {
+        transition: $transition;
+        transition-property: opacity, visibility;
+      }
+      &:not(.is-active) {
+        &:before {
+          pointer-events: none;
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+      &:before {
+        @media (max-width: $lg) {
+          background: rgba($blackFullColor, .75);
+          backdrop-filter: blur(3px);
+          content: '';
+          position: fixed;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: 995;
+        }
+      }
+    }
+  }
+  &__btn-new-chat {
+  }
+}

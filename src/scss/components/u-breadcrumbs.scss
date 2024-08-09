@@ -1,0 +1,42 @@
+.u-breadcrumbs {
+  font-weight: bold;
+  @media (max-width: $lg) {
+    font-size: var(--fs-7);
+  }
+  &__container {
+  }
+  &__list {
+    margin: 0 0 -4rem;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  li {
+    max-width: 100%;
+    margin: 0 0 4rem;
+    padding: 0;
+    flex-shrink: 0;
+    color: $beigeColor;
+    overflow: hidden;
+    &:not(:last-child) {
+      &:after {
+        margin: .1em 6rem 0 4rem;
+        content: '\003E';
+        flex-shrink: 0;
+      }
+    }
+    &:last-child {
+    }
+  }
+  a {
+    display: inline-block;
+    color: $whiteColor;
+    transition: $transition;
+    &:hover {
+      text-decoration: none;
+      @media (min-width: $lg-mf) {
+      }
+    }
+  }
+}

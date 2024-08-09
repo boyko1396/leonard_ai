@@ -1,0 +1,31 @@
+.features {
+  padding: 94rem 0 100rem;
+  position: relative;
+  @media (max-width: $lg) {
+    padding: 74rem 0 80rem;
+  }
+  &__container {
+  }
+  &__title {
+    margin: 0 0 54rem;
+    text-align: center;
+    @media (max-width: $lg) {
+      margin-bottom: 36rem;
+    }
+  }
+  &__list {
+    &-row {
+      margin-bottom: var(--gap-fluid-);
+    }
+    &-col {
+      margin-bottom: var(--gap-fluid);
+      @media (max-width: $sm) {
+        max-width: 100%;
+        flex-basis: 100%;
+      }
+    }
+    &-card {
+      height: 100%;
+    }
+  }
+}

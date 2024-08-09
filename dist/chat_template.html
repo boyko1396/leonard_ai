@@ -1,0 +1,1418 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <link rel="stylesheet" href="css/style.min.css??=v=20240809110014">
+  <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+  <link rel="manifest" href="static/favicon/site.webmanifest">
+  <link rel="mask-icon" href="static/favicon/safari-pinned-tab.svg" color="#412e27">
+  <link rel="shortcut icon" href="static/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#412e27">
+  <meta name="msapplication-config" content="static/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#412e27">
+  <title>Leonard AI - Chat template</title>
+</head>
+<body>
+
+  <div id="root" class="leonard-chat">
+    <div class="chat leonard-chat__inner">
+      <div class="chat__inner">
+        <header class="chat__header header-chat">
+          <div class="container container--size-fluid header-chat__container">
+            <div class="header-chat__col header-chat__col--logo">
+              <a href="/" class="logo header-chat__logo logo--size-md">
+                <picture class="logo__img">
+                  <img src="images/logo-white.svg" width="155" height="35" alt="Leonard AI"></picture>
+              </a>
+            </div>
+            <div class="header-chat__col header-chat__col--center">
+              <div class="header-chat__breadcrumbs u-breadcrumbs">
+                <ul class="u-breadcrumbs__list" itemscope itemtype="https://schema.org/BreadcrumbList">
+                  <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a href="/" itemprop="item">
+                      <span itemprop="name">Главная</span>
+                    </a>
+                    <meta itemprop="position" content="1"></li>
+                </ul>
+              </div>
+            </div>
+            <div class="header-chat__col header-chat__col--action">
+              <ul class="header-chat__router">
+                <li class="header-chat__router-item">
+                  <a href="#" class="btn btn--theme-accent btn--size-md header-chat__router-link">
+                    <span class="btn__inner">
+                      <span class="btn__title">Выйти</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <button type="button" class="d-lg-block header-chat__toggle js-header-chat-toggle-open">
+              <svg class="u-icon">
+                <use xlink:href="images/icons/icons.svg#menu-open"></use>
+              </svg>
+            </button>
+            <a href="#" class="btn btn--theme-beige btn--size-xs d-lg-block header-chat__btn-new-chat">
+              <span class="btn__inner">
+                <span class="btn__title">Новый чат</span>
+                <svg class="u-icon btn__icon btn__icon--dir-rtl">
+                  <use xlink:href="images/icons/icons.svg#plus-btn"></use>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </header>
+        <div class="chat__body">
+          <aside class="chat-aside chat__aside chat__aside--left">
+            <div class="chat-aside__header">
+              <div class="d-lg-block chat-aside__header-mobile">
+                <a href="/" class="logo chat-aside__header-mobile-logo">
+                  <picture class="logo__img">
+                    <img src="images/logo-black.svg" width="155" height="35" alt="Leonard AI"></picture>
+                </a>
+                <button type="button" class="d-lg-block chat-aside__header-mobile-toggle js-header-chat-toggle-close">
+                  <svg class="u-icon">
+                    <use xlink:href="images/icons/icons.svg#close"></use>
+                  </svg>
+                </button>
+              </div>
+              <p class="fs-5 chat-aside__title d-lg-none">Инструменты</p>
+              <hr class="chat-aside__hr d-lg-none">
+              <div class="chat-aside__action">
+                <a href="#" class="btn btn--theme-accent btn--size-md chat-aside__action-btn chat-aside__action-btn--new-chat">
+                  <span class="btn__inner">
+                    <svg class="u-icon btn__icon btn__icon--dir-ltr">
+                      <use xlink:href="images/icons/icons.svg#plus-btn"></use>
+                    </svg>
+                    <span class="btn__title">Новый чат</span>
+                  </span>
+                </a>
+              </div>
+              <hr class="chat-aside__hr d-lg-none">
+              <div class="d-lg-block tab-nav chat-aside__header-tab-nav">
+                <ul class="tab-nav__list">
+                  <li class="tab-nav__item">
+                    <button type="button" class="is-active tab-nav__btn" data-tab-nav-aside="aside-tools">Инструменты</button>
+                  </li>
+                  <li class="tab-nav__item">
+                    <button type="button" class="tab-nav__btn" data-tab-nav-aside="aside-history">История</button>
+                  </li>
+                </ul>
+              </div>
+              <div class="d-lg-block tab-nav chat-aside__tab-content" data-tab-content-aside="aside-history">
+                <ul class="tab-nav__list">
+                  <li class="tab-nav__item">
+                    <button type="button" class="is-active tab-nav__btn" data-subtab-nav-aside="aside-history-chat">Чаты</button>
+                  </li>
+                  <li class="tab-nav__item">
+                    <button type="button" class="tab-nav__btn" data-subtab-nav-aside="aside-history-tools">Инструменты</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="u-scrollbar chat-aside__body">
+              <div class="chat-aside__body-inner">
+                <div class="chat-aside__tab-content is-show" data-tab-content-aside="aside-tools">
+                  <nav class="chat-aside__nav" role="navigation">
+                    <ul class="chat-aside__nav-list">
+                      <li class="chat-aside__nav-item">
+                        <a href="chat_images.html" class="chat-aside__nav-link">Генератор изображений</a>
+                      </li>
+                      <li class="chat-aside__nav-item">
+                        <button type="button" data-modal="popup-chat-article-info" class="chat-aside__nav-link">Загрузи и&nbsp;спроси</button>
+                      </li>
+                      <li class="chat-aside__nav-item">
+                        <button type="button" data-modal="popup-chat-link-youtube" class="chat-aside__nav-link">YouTube и&nbsp;спроси</button>
+                      </li>
+                      <li class="chat-aside__nav-item">
+                        <button type="button" data-modal="popup-chat-youtube" class="chat-aside__nav-link">
+                          Краткое содержание
+                          <br>YouTube-видео</button>
+                      </li>
+                      <li class="chat-aside__nav-item">
+                        <button type="button" data-modal="popup-chat-article" class="chat-aside__nav-link">Краткое содержание статьи</button>
+                      </li>
+                      <li class="chat-aside__nav-item">
+                        <button type="button" data-modal="popup-chat-link" class="chat-aside__nav-link">Вставь ссылку и&nbsp;спроси</button>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+                <div class="chat-aside__tab-content" data-tab-content-aside="aside-history">
+                  <div class="is-show chat-aside__subtab-content" data-subtab-content-aside="aside-history-chat">
+                    <div class="chat-aside__body-history-item">
+                      <p class="chat-aside__body-history-item-title">Сегодня</p>
+                      <div class="chat-aside__body-history-item-list">
+                        <div class="chat-aside__body-history-item-card history-item">
+                          <div class="history-item__inner">
+                            <p class="history-item__title">
+                              <a href="#" class="history-item__link">
+                                Составь контент-план для блогера, который ведет лайф-контент, есть...
+                              </a>
+                            </p>
+                            <div class="history-item__footer">
+                              <div class="history-item__action">
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#edit"></use>
+                                  </svg>
+                                </button>
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#delete"></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="chat-aside__body-history-item">
+                      <p class="chat-aside__body-history-item-title">Предыдущие 7 дней</p>
+                      <div class="chat-aside__body-history-item-list">
+                        <div class="chat-aside__body-history-item-card history-item">
+                          <div class="history-item__inner">
+                            <p class="history-item__title">
+                              <a href="#" class="history-item__link">
+                                Составь контент-план для блогера, который ведет лайф-контент, есть...
+                              </a>
+                            </p>
+                            <div class="history-item__footer">
+                              <div class="history-item__action">
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#edit"></use>
+                                  </svg>
+                                </button>
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#delete"></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="chat-aside__body-history-item-card history-item">
+                          <div class="history-item__inner">
+                            <p class="history-item__title">
+                              <a href="#" class="history-item__link">
+                                Составь контент-план для блогера, который ведет лайф-контент, есть...
+                              </a>
+                            </p>
+                            <div class="history-item__footer">
+                              <div class="history-item__action">
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#edit"></use>
+                                  </svg>
+                                </button>
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#delete"></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="chat-aside__body-history-item">
+                      <p class="chat-aside__body-history-item-title">Предыдущие 30 дней</p>
+                      <div class="chat-aside__body-history-item-list">
+                        <div class="chat-aside__body-history-item-card history-item">
+                          <div class="history-item__inner">
+                            <p class="history-item__title">
+                              <a href="#" class="history-item__link">
+                                Составь контент-план для блогера, который ведет лайф-контент, есть...
+                              </a>
+                            </p>
+                            <div class="history-item__footer">
+                              <div class="history-item__action">
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#edit"></use>
+                                  </svg>
+                                </button>
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#delete"></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="chat-aside__body-history-item-card history-item">
+                          <div class="history-item__inner">
+                            <p class="history-item__title">
+                              <a href="#" class="history-item__link">
+                                Составь контент-план для блогера, который ведет лайф-контент, есть...
+                              </a>
+                            </p>
+                            <div class="history-item__footer">
+                              <div class="history-item__action">
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#edit"></use>
+                                  </svg>
+                                </button>
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#delete"></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="chat-aside__body-history-item-card history-item">
+                          <div class="history-item__inner">
+                            <p class="history-item__title">
+                              <a href="#" class="history-item__link">
+                                Составь контент-план для блогера, который ведет лайф-контент, есть...
+                              </a>
+                            </p>
+                            <div class="history-item__footer">
+                              <div class="history-item__action">
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#edit"></use>
+                                  </svg>
+                                </button>
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#delete"></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="chat-aside__body-history-item-card history-item">
+                          <div class="history-item__inner">
+                            <p class="history-item__title">
+                              <a href="#" class="history-item__link">
+                                Составь контент-план для блогера, который ведет лайф-контент, есть...
+                              </a>
+                            </p>
+                            <div class="history-item__footer">
+                              <div class="history-item__action">
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#edit"></use>
+                                  </svg>
+                                </button>
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#delete"></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="chat-aside__subtab-content" data-subtab-content-aside="aside-history-tools">
+                    <div class="chat-aside__body-history-item">
+                      <p class="chat-aside__body-history-item-title">Сегодня</p>
+                      <div class="chat-aside__body-history-item-list">
+                        <div class="chat-aside__body-history-item-card history-item">
+                          <div class="history-item__inner">
+                            <p class="history-item__suptitle">Генерация изображений</p>
+                            <p class="history-item__title">
+                              <a href="#" class="history-item__link">
+                                Составь контент-план для блогера, который ведет лайф-контент, есть...
+                              </a>
+                            </p>
+                            <div class="history-item__footer">
+                              <div class="history-item__action">
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#edit"></use>
+                                  </svg>
+                                </button>
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#delete"></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="chat-aside__body-history-item">
+                      <p class="chat-aside__body-history-item-title">Предыдущие 7 дней</p>
+                      <div class="chat-aside__body-history-item-list">
+                        <div class="chat-aside__body-history-item-card history-item">
+                          <div class="history-item__inner">
+                            <p class="history-item__suptitle">YouTube и спроси</p>
+                            <p class="history-item__title">
+                              <a href="#" class="history-item__link">
+                                Составь контент-план для блогера, который ведет лайф-контент, есть...
+                              </a>
+                            </p>
+                            <div class="history-item__footer">
+                              <div class="history-item__action">
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#edit"></use>
+                                  </svg>
+                                </button>
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#delete"></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-aside__footer">
+              <a href="chat_settings.html" class="btn btn--size-md chat-aside__action-btn btn--theme-accent-outline chat-aside__action-btn--settings">
+                <span class="btn__inner">
+                  <svg class="u-icon btn__icon btn__icon--dir-ltr">
+                    <use xlink:href="images/icons/icons.svg#settings"></use>
+                  </svg>
+                  <span class="btn__title">Настройки</span>
+                </span>
+              </a>
+              <a href="#" class="btn btn--theme-accent btn--size-md chat-aside__action-btn chat-aside__action-btn--exit d-lg-block">
+                <span class="btn__inner">
+                  <span class="btn__title">Выйти</span>
+                </span>
+              </a>
+            </div>
+          </aside>
+          <main class="chat-main chat__main" role="main">
+            <div class="u-scrollbar chat-main__body js-chat-body u-scrollbar--offset-right">
+              <div class="chat-main__body-message-wrapper">
+                <div class="chat-main__body-message u-message u-message--size-lg u-message--user">
+                  <div class="u-content u-message__content">
+                    <p>Напиши меню на неделю</p>
+                  </div>
+                </div>
+                <div class="chat-main__body-message u-message u-message--size-lg u-message--chat">
+                  <div class="u-content u-message__content">
+                    <p>Конечно! Вот примерное меню на неделю:</p>
+                    <p> <strong class="fs-percent-112">Понедельник:</strong>
+                    </p>
+                    <p> <strong>Завтрак:</strong>
+                      Омлет с овощами и тост.
+                      <br>
+                      <strong>Обед:</strong>
+                      Куриный суп с лапшой.
+                      <br>
+                      <strong>Ужин:</strong>
+                      Рыба, запеченная с лимоном и зеленью, с картофельным пюре.
+                    </p>
+                    <p>
+                      <strong class="fs-percent-112">Вторник:</strong>
+                    </p>
+                    <p>
+                      <strong>Завтрак:</strong>
+                      Овсянка с фруктами и медом.
+                      <br>
+                      <strong>Обед:</strong>
+                      Греческий салат и куриные шашлычки.
+                      <br>
+                      <strong>Ужин:</strong>
+                      Паста с соусом Болоньезе и пармезаном.
+                    </p>
+                    <p>
+                      <strong class="fs-percent-112">Среда:</strong>
+                    </p>
+                    <p>
+                      <strong>Завтрак:</strong>
+                      Йогурт с мюсли и ягодами.
+                      <br>
+                      <strong>Обед:</strong>
+                      Овощное рагу с кусочками говядины.
+                      <br>
+                      <strong>Ужин:</strong>
+                      Куриное филе в кефирном соусе с рисом.
+                    </p>
+                    <p>
+                      <strong class="fs-percent-112">Четверг:</strong>
+                    </p>
+                    <p>
+                      <strong>Завтрак:</strong>
+                      Блины с творогом и вареньем.
+                      <br>
+                      <strong>Обед:</strong>
+                      Суп-пюре из тыквы с сухариками.
+                      <br>
+                      <strong>Ужин:</strong>
+                      Свинина в кисло-сладком соусе с овощами и рисом.
+                    </p>
+                    <p>
+                      <strong class="fs-percent-112">Пятница:</strong>
+                    </p>
+                    <p>
+                      <strong>Завтрак:</strong>
+                      Гречневая каша с молоком и орехами.
+                      <br>
+                      <strong>Обед:</strong>
+                      Салат Цезарь с курицей.
+                      <br>
+                      <strong>Ужин:</strong>
+                      Лазанья с сыром и томатным соусом.
+                    </p>
+                    <p>
+                      <strong class="fs-percent-112">Суббота:</strong>
+                    </p>
+                    <p>
+                      <strong>Завтрак:</strong>
+                      Смузи с бананом, шпинатом и йогуртом.
+                      <br>
+                      <strong>Обед:</strong>
+                      Борщ со сметаной и чесночными пампушками.
+                      <br>
+                      <strong>Ужин:</strong>
+                      Шашлык с овощами на гриле и картофельные дольки.
+                    </p>
+                    <p>
+                      <strong class="fs-percent-112">Воскресенье:</strong>
+                    </p>
+                    <p>
+                      <strong>Завтрак:</strong>
+                      Сырники с медом и сметаной.
+                      <br>
+                      <strong>Обед:</strong>
+                      Окрошка на квасе или кефире.
+                      <br>
+                      <strong>Ужин:</strong>
+                      Запеченная курица с овощами и зеленым салатом.
+                    </p>
+                    <p>Приятного аппетита</p>
+                  </div>
+                </div>
+                <div class="chat-main__body-message u-message u-message--size-lg u-message--user">
+                  <div class="u-content u-message__content">
+                    <p>
+                      Напиши меню на неделю Напиши меню на неделю Напиши меню на неделю Напиши меню на неделю Напиши меню на неделю Напиши меню на неделю Напиши меню на неделю Напиши меню на неделю Напиши меню на неделю Напиши меню на неделю Напиши меню на неделю Напиши меню на неделю Напиши меню на неделю Напиши меню на неделю Напиши меню на неделю Напиши меню на неделю Напиши меню на неделю Напиши меню на неделю Напиши меню на неделю Напиши меню на неделю Напиши меню на неделю Напиши меню на неделю Напиши меню на неделю Напиши меню на неделю
+                    </p>
+                  </div>
+                </div>
+                <div class="chat-main__body-message u-message u-message--size-lg u-message--chat">
+                  <div class="u-content u-message__content">
+                    <p>Конечно! Вот примерное меню на неделю:</p>
+                    <p>
+                      <strong class="fs-percent-112">Понедельник:</strong>
+                    </p>
+                    <p>
+                      <strong>Завтрак:</strong>
+                      Омлет с овощами и тост.
+                      <br>
+                      <strong>Обед:</strong>
+                      Куриный суп с лапшой.
+                      <br>
+                      <strong>Ужин:</strong>
+                      Рыба, запеченная с лимоном и зеленью, с картофельным пюре.
+                    </p>
+                    <p>
+                      <strong class="fs-percent-112">Вторник:</strong>
+                    </p>
+                    <p>
+                      <strong>Завтрак:</strong>
+                      Овсянка с фруктами и медом.
+                      <br>
+                      <strong>Обед:</strong>
+                      Греческий салат и куриные шашлычки.
+                      <br>
+                      <strong>Ужин:</strong>
+                      Паста с соусом Болоньезе и пармезаном.
+                    </p>
+                    <p>
+                      <strong class="fs-percent-112">Среда:</strong>
+                    </p>
+                    <p>
+                      <strong>Завтрак:</strong>
+                      Йогурт с мюсли и ягодами.
+                      <br>
+                      <strong>Обед:</strong>
+                      Овощное рагу с кусочками говядины.
+                      <br>
+                      <strong>Ужин:</strong>
+                      Куриное филе в кефирном соусе с рисом.
+                    </p>
+                    <p>
+                      <strong class="fs-percent-112">Четверг:</strong>
+                    </p>
+                    <p>
+                      <strong>Завтрак:</strong>
+                      Блины с творогом и вареньем.
+                      <br>
+                      <strong>Обед:</strong>
+                      Суп-пюре из тыквы с сухариками.
+                      <br>
+                      <strong>Ужин:</strong>
+                      Свинина в кисло-сладком соусе с овощами и рисом.
+                    </p>
+                    <p>
+                      <strong class="fs-percent-112">Пятница:</strong>
+                    </p>
+                    <p>
+                      <strong>Завтрак:</strong>
+                      Гречневая каша с молоком и орехами.
+                      <br>
+                      <strong>Обед:</strong>
+                      Салат Цезарь с курицей.
+                      <br>
+                      <strong>Ужин:</strong>
+                      Лазанья с сыром и томатным соусом.
+                    </p>
+                    <p>
+                      <strong class="fs-percent-112">Суббота:</strong>
+                    </p>
+                    <p>
+                      <strong>Завтрак:</strong>
+                      Смузи с бананом, шпинатом и йогуртом.
+                      <br>
+                      <strong>Обед:</strong>
+                      Борщ со сметаной и чесночными пампушками.
+                      <br>
+                      <strong>Ужин:</strong>
+                      Шашлык с овощами на гриле и картофельные дольки.
+                    </p>
+                    <p>
+                      <strong class="fs-percent-112">Воскресенье:</strong>
+                    </p>
+                    <p>
+                      <strong>Завтрак:</strong>
+                      Сырники с медом и сметаной.
+                      <br>
+                      <strong>Обед:</strong>
+                      Окрошка на квасе или кефире.
+                      <br>
+                      <strong>Ужин:</strong>
+                      Запеченная курица с овощами и зеленым салатом.
+                    </p>
+                    <p>Приятного аппетита</p>
+                  </div>
+                </div>
+                <div class="chat-main__body-message u-message u-message--size-lg u-message--user">
+                  <div class="u-content u-message__content">
+                    <p>Напиши меню на неделю</p>
+                  </div>
+                </div>
+                <div class="chat-main__body-message u-message u-message--size-lg u-message--chat">
+                  <div class="u-content u-message__content">
+                    <p>Конечно! Вот примерное меню на неделю:</p>
+                    <p>
+                      <strong class="fs-percent-112">Понедельник:</strong>
+                    </p>
+                    <p>
+                      <strong>Завтрак:</strong>
+                      Омлет с овощами и тост.
+                      <br>
+                      <strong>Обед:</strong>
+                      Куриный суп с лапшой.
+                      <br>
+                      <strong>Ужин:</strong>
+                      Рыба, запеченная с лимоном и зеленью, с картофельным пюре.
+                    </p>
+                    <p>
+                      <strong class="fs-percent-112">Вторник:</strong>
+                    </p>
+                    <p>
+                      <strong>Завтрак:</strong>
+                      Овсянка с фруктами и медом.
+                      <br>
+                      <strong>Обед:</strong>
+                      Греческий салат и куриные шашлычки.
+                      <br>
+                      <strong>Ужин:</strong>
+                      Паста с соусом Болоньезе и пармезаном.
+                    </p>
+                    <p>
+                      <strong class="fs-percent-112">Среда:</strong>
+                    </p>
+                    <p>
+                      <strong>Завтрак:</strong>
+                      Йогурт с мюсли и ягодами.
+                      <br>
+                      <strong>Обед:</strong>
+                      Овощное рагу с кусочками говядины.
+                      <br>
+                      <strong>Ужин:</strong>
+                      Куриное филе в кефирном соусе с рисом.
+                    </p>
+                    <p>
+                      <strong class="fs-percent-112">Четверг:</strong>
+                    </p>
+                    <p>
+                      <strong>Завтрак:</strong>
+                      Блины с творогом и вареньем.
+                      <br>
+                      <strong>Обед:</strong>
+                      Суп-пюре из тыквы с сухариками.
+                      <br>
+                      <strong>Ужин:</strong>
+                      Свинина в кисло-сладком соусе с овощами и рисом.
+                    </p>
+                    <p>
+                      <strong class="fs-percent-112">Пятница:</strong>
+                    </p>
+                    <p>
+                      <strong>Завтрак:</strong>
+                      Гречневая каша с молоком и орехами.
+                      <br>
+                      <strong>Обед:</strong>
+                      Салат Цезарь с курицей.
+                      <br>
+                      <strong>Ужин:</strong>
+                      Лазанья с сыром и томатным соусом.
+                    </p>
+                    <p>
+                      <strong class="fs-percent-112">Суббота:</strong>
+                    </p>
+                    <p>
+                      <strong>Завтрак:</strong>
+                      Смузи с бананом, шпинатом и йогуртом.
+                      <br>
+                      <strong>Обед:</strong>
+                      Борщ со сметаной и чесночными пампушками.
+                      <br>
+                      <strong>Ужин:</strong>
+                      Шашлык с овощами на гриле и картофельные дольки.
+                    </p>
+                    <p>
+                      <strong class="fs-percent-112">Воскресенье:</strong>
+                    </p>
+                    <p>
+                      <strong>Завтрак:</strong>
+                      Сырники с медом и сметаной.
+                      <br>
+                      <strong>Обед:</strong>
+                      Окрошка на квасе или кефире.
+                      <br>
+                      <strong>Ужин:</strong>
+                      Запеченная курица с овощами и зеленым салатом.
+                    </p>
+                    <p>Приятного аппетита</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-main__footer">
+              <div class="chat-main__footer-action">
+                <div class="chat-main__footer-action-version chat-version chat-version--size-md chat-version--theme-white js-chat-version">
+                  <div class="chat-version__inner">
+                    <div class="chat-version__dropdown">
+                      <button type="button" data-version="3.5" class="is-active chat-version__dropdown-btn js-chat-version-switch">GPT-3.5</button>
+                      <button type="button" data-version="4o" class="chat-version__dropdown-btn js-chat-version-switch">GPT-4o</button>
+                    </div>
+                    <button type="button" class="chat-version__toggle js-chat-version-toggle">
+                      <svg class="u-icon chat-version__toggle-icon">
+                        <use xlink:href="images/icons/icons.svg#arrow-type-3"></use>
+                      </svg>
+                      <span class="chat-version__toggle-title"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <form action="#" class="chat-main__message">
+                <textarea name="message" rows="" cols="" id="message-textarea" class="u-scrollbar chat-main__message-textarea js-chat-textarea u-textarea u-textarea--size-md u-textarea--theme-white" placeholder="Напишите ваше сообщение"></textarea>
+                <div class="chat-main__message-aside">
+                  <p class="chat-main__message-max-symbol">0/10000</p>
+                  <button type="submit" id="send-button" class="btn-send btn-send--size-md btn-send--theme-accent chat-main__message-btn-send" disabled="disabled" title="Отправить">
+                    <span class="btn-send__inner">
+                      <span class="btn-send__title visually-hidden">Отправить сообщение</span>
+                      <span class="btn-send__icon">
+                        <svg class="u-icon">
+                          <use xlink:href="images/icons/icons.svg#arrow-type-2"></use>
+                        </svg>
+                      </span>
+                    </span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </main>
+          <aside class="chat-aside chat__aside chat__aside--right">
+            <div class="chat-aside__header">
+              <p class="fs-5 chat-aside__title">История чатов</p>
+              <hr class="chat-aside__hr">
+              <nav class="chat-aside__nav" role="navigation">
+                <ul class="chat-aside__nav-list js-chat-tabs-nav">
+                  <li class="chat-aside__nav-item">
+                    <a href="#chat-history-gpt" class="chat-aside__nav-link js-chat-tabs-nav-link is-active">Чаты с GPT</a>
+                  </li>
+                  <li class="chat-aside__nav-item">
+                    <a href="#chat-history-tools" class="chat-aside__nav-link js-chat-tabs-nav-link">Инструменты</a>
+                  </li>
+                </ul>
+              </nav>
+              <hr class="chat-aside__hr"></div>
+            <div class="u-scrollbar chat-aside__body">
+              <div class="chat-aside__body-inner">
+                <div class="js-chat-tabs-content">
+                  <div id="chat-history-gpt" class="is-show chat-aside__body-history">
+                    <div class="chat-aside__body-history-item">
+                      <p class="chat-aside__body-history-item-title">Сегодня</p>
+                      <div class="chat-aside__body-history-item-list">
+                        <div class="chat-aside__body-history-item-card history-item">
+                          <div class="history-item__inner">
+                            <p class="history-item__title">
+                              <a href="#" class="history-item__link">
+                                Составь контент-план для блогера, который ведет лайф-контент, есть...
+                              </a>
+                            </p>
+                            <div class="history-item__footer">
+                              <div class="history-item__action">
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#edit"></use>
+                                  </svg>
+                                </button>
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#delete"></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="chat-aside__body-history-item">
+                      <p class="chat-aside__body-history-item-title">Предыдущие 7 дней</p>
+                      <div class="chat-aside__body-history-item-list">
+                        <div class="chat-aside__body-history-item-card history-item">
+                          <div class="history-item__inner">
+                            <p class="history-item__title">
+                              <a href="#" class="history-item__link">
+                                Составь контент-план для блогера, который ведет лайф-контент, есть...
+                              </a>
+                            </p>
+                            <div class="history-item__footer">
+                              <div class="history-item__action">
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#edit"></use>
+                                  </svg>
+                                </button>
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#delete"></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="chat-aside__body-history-item-card history-item">
+                          <div class="history-item__inner">
+                            <p class="history-item__title">
+                              <a href="#" class="history-item__link">
+                                Составь контент-план для блогера, который ведет лайф-контент, есть...
+                              </a>
+                            </p>
+                            <div class="history-item__footer">
+                              <div class="history-item__action">
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#edit"></use>
+                                  </svg>
+                                </button>
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#delete"></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="chat-aside__body-history-item">
+                      <p class="chat-aside__body-history-item-title">Предыдущие 30 дней</p>
+                      <div class="chat-aside__body-history-item-list">
+                        <div class="chat-aside__body-history-item-card history-item">
+                          <div class="history-item__inner">
+                            <p class="history-item__title">
+                              <a href="#" class="history-item__link">
+                                Составь контент-план для блогера, который ведет лайф-контент, есть...
+                              </a>
+                            </p>
+                            <div class="history-item__footer">
+                              <div class="history-item__action">
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#edit"></use>
+                                  </svg>
+                                </button>
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#delete"></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="chat-aside__body-history-item-card history-item">
+                          <div class="history-item__inner">
+                            <p class="history-item__title">
+                              <a href="#" class="history-item__link">
+                                Составь контент-план для блогера, который ведет лайф-контент, есть...
+                              </a>
+                            </p>
+                            <div class="history-item__footer">
+                              <div class="history-item__action">
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#edit"></use>
+                                  </svg>
+                                </button>
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#delete"></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="chat-aside__body-history-item-card history-item">
+                          <div class="history-item__inner">
+                            <p class="history-item__title">
+                              <a href="#" class="history-item__link">
+                                Составь контент-план для блогера, который ведет лайф-контент, есть...
+                              </a>
+                            </p>
+                            <div class="history-item__footer">
+                              <div class="history-item__action">
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#edit"></use>
+                                  </svg>
+                                </button>
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#delete"></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="chat-aside__body-history-item-card history-item">
+                          <div class="history-item__inner">
+                            <p class="history-item__title">
+                              <a href="#" class="history-item__link">
+                                Составь контент-план для блогера, который ведет лайф-контент, есть...
+                              </a>
+                            </p>
+                            <div class="history-item__footer">
+                              <div class="history-item__action">
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#edit"></use>
+                                  </svg>
+                                </button>
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#delete"></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="chat-history-tools" class="chat-aside__body-history">
+                    <div class="chat-aside__body-history-item">
+                      <p class="chat-aside__body-history-item-title">Сегодня</p>
+                      <div class="chat-aside__body-history-item-list">
+                        <div class="chat-aside__body-history-item-card history-item">
+                          <div class="history-item__inner">
+                            <p class="history-item__suptitle">Генерация изображений</p>
+                            <p class="history-item__title">
+                              <a href="#" class="history-item__link">
+                                Составь контент-план для блогера, который ведет лайф-контент, есть...
+                              </a>
+                            </p>
+                            <div class="history-item__footer">
+                              <div class="history-item__action">
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#edit"></use>
+                                  </svg>
+                                </button>
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#delete"></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="chat-aside__body-history-item">
+                      <p class="chat-aside__body-history-item-title">Предыдущие 7 дней</p>
+                      <div class="chat-aside__body-history-item-list">
+                        <div class="chat-aside__body-history-item-card history-item">
+                          <div class="history-item__inner">
+                            <p class="history-item__suptitle">YouTube и спроси</p>
+                            <p class="history-item__title">
+                              <a href="#" class="history-item__link">
+                                Составь контент-план для блогера, который ведет лайф-контент, есть...
+                              </a>
+                            </p>
+                            <div class="history-item__footer">
+                              <div class="history-item__action">
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#edit"></use>
+                                  </svg>
+                                </button>
+                                <button type="button" class="history-item__action-btn">
+                                  <svg class="u-icon">
+                                    <use xlink:href="images/icons/icons.svg#delete"></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+    <div class="popup" data-popup="popup-registration" data-close-overlay>
+      <div class="popup__wrapper" data-close-overlay>
+        <div class="popup__content popup__content--size-md popup__content--theme-beige">
+          <button type="button" class="js-button-close popup__btn-close">
+            <svg class="u-icon btn-close__icon">
+              <use xlink:href="images/icons/icons.svg#close"></use>
+            </svg>
+          </button>
+          <div class="popup__inner login-block">
+            <div class="login-block__inner">
+              <p class="fs-2 login-block__title">Попробуйте нейросеть</p>
+              <p class="login-block__suptitle">Отправьте свой запрос и&nbsp;получите ответ за секунды</p>
+              <p class="login-block__subtitle">
+                <strong>Продолжите с одним из вариантов:</strong>
+              </p>
+              <div class="login-block__sc">
+                <button type="button" class="btn-auth btn-auth--size-xs btn-auth--theme-white login-block__sc-btn">
+                  <span class="btn__inner">
+                    <span class="btn__icon btn__icon--dir-ltr">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 24C18.6277 24 24 18.6277 24 12C24 5.37231 18.6277 0 12 0C5.37231 0 0 5.37231 0 12C0 18.6277 5.37231 24 12 24Z" fill="#FC3F1D"/>
+                        <path d="M15.8308 18.72H13.4492V6.9397H12.3886C10.4492 6.9397 9.42924 7.92001 9.42924 9.37016C9.42924 11.0197 10.1391 11.7794 11.5892 12.7597L12.7892 13.56L9.33877 18.72H6.76985L9.86954 14.1139C8.08616 12.8455 7.09016 11.5957 7.09016 9.51047C7.09016 6.8797 8.90954 5.10001 12.3794 5.10001H15.8299L15.8308 18.72Z" fill="white"/>
+                      </svg>
+                    </span>
+                    <span class="btn__title">Яндекс</span>
+                  </span>
+                </button>
+                <button type="button" class="btn-auth btn-auth--size-xs btn-auth--theme-white login-block__sc-btn">
+                  <span class="btn__inner">
+                    <span class="btn__icon btn__icon--dir-ltr">
+                      <svg class="u-icon">
+                        <use xlink:href="images/icons/icons.svg#vk"></use>
+                      </svg>
+                    </span>
+                    <span class="btn__title">ВКонтакте</span>
+                  </span>
+                </button>
+                <button type="button" class="btn-auth btn-auth--size-xs btn-auth--theme-white login-block__sc-btn">
+                  <span class="btn__inner">
+                    <span class="btn__icon btn__icon--dir-ltr">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M23.7663 12.2764C23.7663 11.4607 23.7001 10.6406 23.559 9.83806H12.2402V14.459H18.722C18.453 15.9494 17.5888 17.2678 16.3233 18.1056V21.1039H20.1903C22.4611 19.0139 23.7663 15.9273 23.7663 12.2764Z" fill="#4285F4"/>
+                        <path d="M12.2399 24.0008C15.4764 24.0008 18.2058 22.9382 20.1944 21.1039L16.3274 18.1055C15.2515 18.8375 13.8626 19.252 12.2443 19.252C9.11372 19.252 6.4593 17.1399 5.50688 14.3003H1.51643V17.3912C3.55355 21.4434 7.70273 24.0008 12.2399 24.0008V24.0008Z" fill="#34A853"/>
+                        <path d="M5.50277 14.3003C5.00011 12.8099 5.00011 11.1961 5.50277 9.70577V6.61482H1.51674C-0.185266 10.0056 -0.185266 14.0005 1.51674 17.3912L5.50277 14.3003V14.3003Z" fill="#FBBC04"/>
+                        <path d="M12.2399 4.74966C13.9508 4.7232 15.6043 5.36697 16.8433 6.54867L20.2693 3.12262C18.0999 1.0855 15.2206 -0.034466 12.2399 0.000808666C7.70273 0.000808666 3.55355 2.55822 1.51643 6.61481L5.50247 9.70575C6.45048 6.86173 9.10931 4.74966 12.2399 4.74966V4.74966Z" fill="#EA4335"/>
+                      </svg>
+                    </span>
+                    <span class="btn__title">Google</span>
+                  </span>
+                </button>
+                <a href="auth_login_form.html" class="btn-auth btn-auth--size-xs btn-auth--theme-white login-block__sc-btn">
+                  <span class="btn__inner">
+                    <span class="btn__icon btn__icon--dir-ltr">
+                      <svg class="u-icon">
+                        <use xlink:href="images/icons/icons.svg#email"></use>
+                      </svg>
+                    </span>
+                    <span class="btn__title">Email</span>
+                  </span>
+                </a>
+              </div>
+              <div class="u-content form-privacy login-block__privacy">
+                <p>
+                  Создавая аккаунт, вы соглашаетесь с&nbsp;нашими
+                  <a href="terms.html" target="_blank">Условиями использования</a>
+                  и&nbsp;
+                  <a href="privacy.html" target="_blank">Политикой&nbsp;конфиденциальности</a>
+                  .
+                </p>
+              </div>
+              <div class="u-content form-appeal login-block__appeal">
+                <p>
+                  Уже есть аккаунт?
+                  <a href="auth_login.html">
+                    <strong>Войти</strong>
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup" data-popup="popup-chat-article-info" data-close-overlay>
+      <div class="popup__wrapper" data-close-overlay>
+        <div class="popup__content popup__content--size-sm popup__content--theme-beige-light">
+          <button type="button" class="js-button-close popup__btn-close">
+            <svg class="u-icon btn-close__icon">
+              <use xlink:href="images/icons/icons.svg#close"></use>
+            </svg>
+          </button>
+          <div class="popup__inner">
+            <div class="popup__chat-form-wrapper">
+              <header class="popup__chat-form-header">
+                <p class="fs-3 popup__chat-form-title">Загрузи и спроси</p>
+                <p class="popup__chat-form-subtitle">Задайте любой вопрос по&nbsp;документу</p>
+              </header>
+              <form action="#" class="popup__chat-form">
+                <div class="popup__chat-form-upload-file upload-file">
+                  <input type="file" name="attach-file-article" id="attach-file-article" class="upload-file__control" value="">
+                  <div class="upload-file__inner">
+                    <label for="attach-file-article" class="upload-file__label">
+                      <span class="upload-file__body">
+                        <span class="upload-file__picture">
+                          <svg class="u-icon">
+                            <use xlink:href="images/icons/icons.svg#upload-file"></use>
+                          </svg>
+                        </span>
+                        <span class="upload-file__title d-md-none">Перетащите файл сюда</span>
+                        <span class="upload-file__title color-olive">Выбрать файл</span>
+                      </span>
+                    </label>
+                  </div>
+                  <div class="upload-file__limitation">
+                    <p class="upload-file__limitation-text">
+                      Поддерживаемые форматы:
+                      <strong>PDF, DOC, XLSX</strong>
+                    </p>
+                    <p class="upload-file__limitation-text">
+                      Макс. размер файла:
+                      <strong>20mb</strong>
+                    </p>
+                  </div>
+                </div>
+                <div class="u-input popup__chat-form-message">
+                  <label class="u-input__label">
+                    <textarea name="message" class="u-input__el u-input__el--size-md u-input__el--theme-grey-outline u-input__el--type-textarea u-scrollbar" required style="min-height: 124rem;" placeholder="Введите ваш вопрос здесь..."></textarea>
+                  </label>
+                </div>
+                <footer class="popup__chat-form-footer">
+                  <button type="submit" class="btn btn--theme-accent btn--size-lg popup__chat-form-btn" disabled="disabled">
+                    <span class="btn__inner">
+                      <span class="btn__title">Спросить</span>
+                    </span>
+                  </button>
+                </footer>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup" data-popup="popup-chat-article" data-close-overlay>
+      <div class="popup__wrapper" data-close-overlay>
+        <div class="popup__content popup__content--size-sm popup__content--theme-beige-light">
+          <button type="button" class="js-button-close popup__btn-close">
+            <svg class="u-icon btn-close__icon">
+              <use xlink:href="images/icons/icons.svg#close"></use>
+            </svg>
+          </button>
+          <div class="popup__inner">
+            <div class="popup__chat-form-wrapper">
+              <header class="popup__chat-form-header">
+                <p class="fs-3 popup__chat-form-title">Краткое содержание статьи</p>
+                <p class="popup__chat-form-subtitle">Получите детальную выжимку из&nbsp;статьи</p>
+              </header>
+              <form action="#" class="popup__chat-form">
+                <div class="popup__chat-form-upload-file upload-file">
+                  <input type="file" name="attach-file" id="attach-file" class="upload-file__control" value="">
+                  <div class="upload-file__inner">
+                    <label for="attach-file" class="upload-file__label">
+                      <span class="upload-file__body">
+                        <span class="upload-file__picture">
+                          <svg class="u-icon">
+                            <use xlink:href="images/icons/icons.svg#upload-file"></use>
+                          </svg>
+                        </span>
+                        <span class="upload-file__title d-md-none">Перетащите файл сюда</span>
+                        <span class="upload-file__title color-olive">Выбрать файл</span>
+                      </span>
+                    </label>
+                  </div>
+                  <div class="upload-file__limitation">
+                    <p class="upload-file__limitation-text">
+                      Поддерживаемые форматы:
+                      <strong>PDF, DOC, XLSX</strong>
+                    </p>
+                    <p class="upload-file__limitation-text">
+                      Макс. размер файла:
+                      <strong>20mb</strong>
+                    </p>
+                  </div>
+                </div>
+                <footer class="popup__chat-form-footer">
+                  <button type="submit" class="btn btn--theme-accent btn--size-lg popup__chat-form-btn" disabled="disabled">
+                    <span class="btn__inner">
+                      <span class="btn__title">Отправить</span>
+                    </span>
+                  </button>
+                </footer>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup" data-popup="popup-chat-link" data-close-overlay>
+      <div class="popup__wrapper" data-close-overlay>
+        <div class="popup__content popup__content--size-sm popup__content--theme-beige-light">
+          <button type="button" class="js-button-close popup__btn-close">
+            <svg class="u-icon btn-close__icon">
+              <use xlink:href="images/icons/icons.svg#close"></use>
+            </svg>
+          </button>
+          <div class="popup__inner">
+            <div class="popup__chat-form-wrapper">
+              <header class="popup__chat-form-header">
+                <svg class="u-icon popup__chat-form-header-icon">
+                  <use xlink:href="images/icons/icons.svg#earth"></use>
+                </svg>
+                <p class="fs-3 popup__chat-form-title">Вставь ссылку и спроси</p>
+                <p class="popup__chat-form-subtitle">Спросите или найдите что&nbsp;угодно на&nbsp;сайте</p>
+              </header>
+              <form action="#" class="popup__chat-form">
+                <div class="u-input popup__chat-form-input">
+                  <label class="u-input__label">
+                    <svg class="u-icon u-input__icon">
+                      <use xlink:href="images/icons/icons.svg#earth"></use>
+                    </svg>
+                    <input type="text" name="name" class="u-input__el u-input__el--size-md u-input__el--theme-grey-outline u-input__el--type-icon" required placeholder="Вставьте ссылку на сайт"></label>
+                </div>
+                <div class="u-input popup__chat-form-message">
+                  <label class="u-input__label">
+                    <textarea name="message" class="u-input__el u-input__el--size-md u-input__el--theme-grey-outline u-input__el--type-textarea u-scrollbar" required style="min-height: 124rem;" placeholder="Введите ваш вопрос здесь..."></textarea>
+                  </label>
+                </div>
+                <footer class="popup__chat-form-footer">
+                  <button type="submit" class="btn btn--theme-accent btn--size-lg popup__chat-form-btn" disabled="disabled">
+                    <span class="btn__inner">
+                      <span class="btn__title">Спросить</span>
+                    </span>
+                  </button>
+                </footer>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup" data-popup="popup-chat-link-youtube" data-close-overlay>
+      <div class="popup__wrapper" data-close-overlay>
+        <div class="popup__content popup__content--size-sm popup__content--theme-beige-light">
+          <button type="button" class="js-button-close popup__btn-close">
+            <svg class="u-icon btn-close__icon">
+              <use xlink:href="images/icons/icons.svg#close"></use>
+            </svg>
+          </button>
+          <div class="popup__inner">
+            <div class="popup__chat-form-wrapper">
+              <header class="popup__chat-form-header">
+                <svg class="u-icon popup__chat-form-header-icon">
+                  <use xlink:href="images/icons/icons.svg#youtube-color"></use>
+                </svg>
+                <p class="fs-3 popup__chat-form-title">YouTube и спроси</p>
+                <p class="popup__chat-form-subtitle">Спросите что угодно о&nbsp;видео с YouTube</p>
+              </header>
+              <form action="#" class="popup__chat-form">
+                <div class="u-input popup__chat-form-input">
+                  <label class="u-input__label">
+                    <svg class="u-icon u-input__icon">
+                      <use xlink:href="images/icons/icons.svg#youtube-color"></use>
+                    </svg>
+                    <input type="text" name="name" class="u-input__el u-input__el--size-md u-input__el--theme-grey-outline u-input__el--type-icon" required placeholder="Вставьте ссылку на видео с YouTube"></label>
+                </div>
+                <div class="u-input popup__chat-form-message">
+                  <label class="u-input__label">
+                    <textarea name="message" class="u-input__el u-input__el--size-md u-input__el--theme-grey-outline u-input__el--type-textarea u-scrollbar" required style="min-height: 124rem;" placeholder="Введите ваш вопрос здесь..."></textarea>
+                  </label>
+                </div>
+                <footer class="popup__chat-form-footer">
+                  <button type="submit" class="btn btn--theme-accent btn--size-lg popup__chat-form-btn" disabled="disabled">
+                    <span class="btn__inner">
+                      <span class="btn__title">Спросить</span>
+                    </span>
+                  </button>
+                </footer>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup" data-popup="popup-chat-youtube" data-close-overlay>
+      <div class="popup__wrapper" data-close-overlay>
+        <div class="popup__content popup__content--size-sm popup__content--theme-beige-light">
+          <button type="button" class="js-button-close popup__btn-close">
+            <svg class="u-icon btn-close__icon">
+              <use xlink:href="images/icons/icons.svg#close"></use>
+            </svg>
+          </button>
+          <div class="popup__inner">
+            <div class="popup__chat-form-wrapper">
+              <header class="popup__chat-form-header">
+                <svg class="u-icon popup__chat-form-header-icon">
+                  <use xlink:href="images/icons/icons.svg#youtube-color"></use>
+                </svg>
+                <p class="fs-3 popup__chat-form-title">Краткое содержание YouTube-видео</p>
+                <p class="popup__chat-form-subtitle">Получите детальную выжимку из&nbsp;видео с&nbsp;YouTube</p>
+              </header>
+              <form action="#" class="popup__chat-form">
+                <div class="u-input popup__chat-form-input">
+                  <label class="u-input__label">
+                    <svg class="u-icon u-input__icon">
+                      <use xlink:href="images/icons/icons.svg#youtube-color"></use>
+                    </svg>
+                    <input type="text" name="name" class="u-input__el u-input__el--size-md u-input__el--theme-grey-outline u-input__el--type-icon" required placeholder="Вставьте ссылку на видео с YouTube"></label>
+                </div>
+                <footer class="popup__chat-form-footer">
+                  <button type="submit" class="btn btn--theme-accent btn--size-lg popup__chat-form-btn" disabled="disabled">
+                    <span class="btn__inner">
+                      <span class="btn__title">Отправить</span>
+                    </span>
+                  </button>
+                </footer>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup" data-popup="popup-change-password" data-close-overlay>
+      <div class="popup__wrapper" data-close-overlay>
+        <div class="popup__content popup__content--size-sm popup__content--theme-beige-light">
+          <button type="button" class="js-button-close popup__btn-close">
+            <svg class="u-icon btn-close__icon">
+              <use xlink:href="images/icons/icons.svg#close"></use>
+            </svg>
+          </button>
+          <div class="popup__inner">
+            <div class="popup__form-wrapper">
+              <p class="fs-5 popup__form-title">Изменение пароля</p>
+              <form action="#" class="popup__form">
+                <div class="u-input popup__form-input">
+                  <label class="u-input__label">
+                    <input type="password" name="password" class="u-input__el u-input__el--size-md u-input__el--theme-grey-outline u-input__el--type-text" required placeholder="Введите старый пароль"></label>
+                </div>
+                <div class="u-input popup__form-input">
+                  <label class="u-input__label">
+                    <input type="password" name="password_new" class="u-input__el u-input__el--size-md u-input__el--theme-grey-outline u-input__el--type-text" required placeholder="Введите новый пароль"></label>
+                </div>
+                <div class="u-input popup__form-input">
+                  <label class="u-input__label">
+                    <input type="password" name="password_new_repeat" class="u-input__el u-input__el--size-md u-input__el--theme-grey-outline u-input__el--type-text" required placeholder="Повторно введите новый пароль"></label>
+                </div>
+                <footer class="btn-group popup__form-footer">
+                  <div class="btn-group__inner">
+                    <div class="btn-group__col">
+                      <button type="submit" class="btn btn--theme-accent btn--size-lg popup__form-btn" disabled="disabled">
+                        <span class="btn__inner">
+                          <span class="btn__title">Сменить пароль</span>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </footer>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup" data-popup="popup-cancel-subscription" data-close-overlay>
+      <div class="popup__wrapper" data-close-overlay>
+        <div class="popup__content popup__content--size-sm popup__content--theme-beige-light">
+          <button type="button" class="js-button-close popup__btn-close">
+            <svg class="u-icon btn-close__icon">
+              <use xlink:href="images/icons/icons.svg#close"></use>
+            </svg>
+          </button>
+          <div class="popup__inner">
+            <div class="popup__form-wrapper">
+              <p class="fs-5 popup__form-title">Вы уверены, что хотите отменить подписку?</p>
+              <footer class="btn-group popup__form-footer">
+                <div class="btn-group__inner">
+                  <div class="btn-group__col">
+                    <button type="submit" class="btn btn--size-md btn--theme-grey-outline popup__form-btn-remove">
+                      <span class="btn__inner">
+                        <span class="btn__title">Да</span>
+                      </span>
+                    </button>
+                  </div>
+                  <div class="btn-group__col">
+                    <button type="submit" class="btn btn--size-md btn--theme-beige popup__form-btn-cancel">
+                      <span class="btn__inner">
+                        <span class="btn__title">Нет, я передумал</span>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </footer>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.min.js??=v=20240809110014"></script>
+</body>
+</html>

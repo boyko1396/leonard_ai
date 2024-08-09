@@ -1,0 +1,133 @@
+.auth-layout {
+  display: flex;
+  &__row {
+    width: 100%;
+    display: flex;
+  }
+  &__col {
+    max-width: 50%;
+    flex: 0 0 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &--content {
+      padding: 16rem;
+      @media (max-width: $lg) {
+        max-width: 41.6666666667%;
+        flex-basis: 41.6666666667%;
+      }
+      @media (max-width: $sm) {
+        display: none;
+      }
+    }
+    &--form {
+      background: $accentColor;
+      padding: 40rem 66rem;
+      @media (max-width: $lg) {
+        max-width: 58.3333333333%;
+        padding: var(--gap-container);
+        flex-basis: 58.3333333333%;
+      }
+      @media (max-width: $md) {
+        padding: 16rem;
+      }
+      @media (max-width: $sm) {
+        max-width: 100%;
+        padding: 32rem var(--gap-container);
+        flex-basis: 100%;
+      }
+    }
+  }
+  &__aside {
+    &-register {
+      &-hero {
+        width: 100%;
+        max-width: 261rem;
+        margin: 0 auto;
+        user-select: none;
+        pointer-events: none;
+        img {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+      }
+      &-rating {
+      }
+    }
+    &-reviews {
+      --gap: 8rem;
+      --gap-: -8rem;
+      margin-top: 16rem;
+      &-row {
+      }
+      &-col {
+        @media (max-width: $lg) {
+          max-width: 100%;
+          flex-basis: 100%;
+        }
+        &:not(:first-child) {
+          @media (max-width: $lg) {
+            display: none;
+          }
+        }
+      }
+      &-card {
+        height: 100%;
+        .reviews-card__inner {
+          padding: 24rem 16rem;
+          box-shadow: inset 0 0 0 1px rgba($oliveColor, .25);
+        }
+      }
+    }
+    &-login {
+      height: 100%;
+      padding: 8rem 0 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      &-rating {
+      }
+      &-marquee {
+        margin: 0 -16rem;
+        padding: 60rem 0 20rem;
+        &:before,
+        &:after {
+          display: none;
+        }
+      }
+      &-hero {
+        width: 100%;
+        max-width: 261rem;
+        margin: 0 auto -16rem;
+        user-select: none;
+        pointer-events: none;
+        img {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+      }
+    }
+  }
+  &__main {
+    width: 100%;
+    max-width: 594rem;
+    margin: 0 auto;
+    @media (max-width: $lg) {
+      max-width: 100%;
+    }
+    @media (max-width: $sm) {
+      max-width: 540rem;
+    }
+    &-registration {
+      background: $beigeColor;
+      padding: 80rem 48rem;
+      color: $blackColor;
+      border-radius: $radiusXs;
+      @media (max-width: $md) {
+        padding: 32rem 16rem;
+      }
+    }
+  }
+}

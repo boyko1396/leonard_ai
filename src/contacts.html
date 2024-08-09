@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('html/head.html', {
+    'title': 'Leonard AI - Contacts'
+  })
+  <body class="u-scrollbar">
+
+    <div id="root" class="site">
+      <div class="site__inner">
+        <!-- header BEGIN -->
+        @@include('html/components/header-page.html', {
+          'el': 'site__header'
+        })
+        <!-- header END -->
+        <main role="main" class="site__main">
+          <!-- breadcrumbs-page BEGIN -->
+          <section class="breadcrumbs-page">
+            <div class="container container--size-md breadcrumbs-page__container">
+              <div class="u-breadcrumbs breadcrumbs-page__el">
+                <ul class="u-breadcrumbs__list" itemscope itemtype="https://schema.org/BreadcrumbList">
+                  <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a href="/" itemprop="item">
+                      <span itemprop="name">Главная</span>
+                    </a>
+                    <meta itemprop="position" content="1">
+                  </li>
+                  <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span itemprop="name">Контакты</span>
+                    <meta itemprop="position" content="2">
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <!-- breadcrumbs-page END -->
+          <!-- contacts BEGIN -->
+          <section class="contacts">
+            <picture class="contacts__bg">
+              <source
+                srcset="images/intro-hero-767.webp"
+                type="image/webp"
+                media="(max-width: 767px)">
+              <source
+                srcset="images/intro-hero-767.jpg"
+                media="(max-width: 767px)">
+              <source
+                srcset="images/intro-hero.webp"
+                type="image/webp">
+              <img
+                src="images/intro-hero.jpg"
+                alt="Контакты"
+                width="1440"
+                height="527">
+            </picture>
+            <div class="container container--size-md contacts__container">
+              <div class="contacts__block">
+                <h1 class="contacts__block-title">Контакты</h1>
+                <div class="u-content contacts__block-text">
+                  <p>Свяжитесь с командой Leonard AI для получения поддержки, вопросов и предложений. Мы всегда готовы помочь вам с любыми вопросами. Заполните форму обратной связи ниже, чтобы быстро получить ответ от&nbsp;нашей команды</p>
+                </div>
+                <form action="#" class="contacts__block-form">
+                  <div class="row contacts__block-form-row">
+                    <div class="row__col--3 contacts__block-form-col">
+                      <div class="u-input contacts__block-form-input">
+                        <label class="u-input__label">
+                          <input type="text" name="name" class="u-input__el u-input__el--type-text u-input__el--size-md u-input__el--theme-grey-outline" required placeholder="Ваше имя">
+                        </label>
+                      </div>
+                    </div>
+                    <div class="row__col--3 contacts__block-form-col">
+                      <div class="u-input contacts__block-form-input">
+                        <label class="u-input__label">
+                          <input type="email" name="email" class="u-input__el u-input__el--type-text u-input__el--size-md u-input__el--theme-grey-outline" required placeholder="mail@example.com">
+                        </label>
+                      </div>
+                    </div>
+                    <div class="row__col--3 contacts__block-form-col">
+                      <div class="u-input contacts__block-form-input">
+                        <div class="u-input__label">
+                          <input type="tel" name="phone" class="js-input-tel u-input__el u-input__el--size-md u-input__el--theme-grey-outline" required placeholder="+7 (999) 999 99 99">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row__col--3 contacts__block-form-col">
+                      <button type="submit" class="btn btn--size-sl btn--theme-accent contacts__block-form-btn">
+                        <span class="btn__inner">
+                          <span class="btn__title">Отправить</span>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+                <div class="u-content form-privacy contacts__block-privacy">
+                  <p>Нажимая на кнопку, вы соглашаетесь с нашими <a href="terms.html" target="_blank">Условиями использования</a> и&nbsp;<a href="privacy.html" target="_blank">Политикой конфиденциальности</a>.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- contacts END -->
+        </main>
+        <!-- footer BEGIN -->
+        @@include('html/components/footer-page.html', {
+          'el': 'site__footer'
+        })
+        <!-- footer END -->
+      </div>
+      @@include('html/modal.html')
+    </div>
+
+    @@include('html/script.html')
+  </body>
+</html>

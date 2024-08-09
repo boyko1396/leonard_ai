@@ -1,0 +1,69 @@
+.chat {
+  height: 100%;
+  &__inner {
+    height: 100%;
+    padding: var(--gap-container);
+    display: flex;
+    flex-direction: column;
+    @media (max-width: $lg) {
+      padding-right: 16rem;
+      padding-left: 16rem;
+    }
+  }
+  &__header {
+    margin-bottom: var(--gap);
+    @media (max-width: $lg) {
+      margin: var(--gap-container-) -16rem 12rem;
+    }
+  }
+  &__body {
+    display: flex;
+    flex: 1 1 0;
+    overflow: hidden;
+  }
+  &__aside {
+    max-width: 284rem;
+    flex: 0 0 284rem;
+    &--left {
+      @media (max-width: $lg) {
+        width: calc(100% - 60rem);
+        max-width: 360rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        transition: $transition;
+        transition-property: transform, visibility, opacity;
+        z-index: 998;
+      }
+      &:not(.is-show) {
+        @media (max-width: $lg) {
+          transform: translateX(-100vw);
+          pointer-events: none;
+          visibility: hidden;
+          opacity: 0;
+        }
+      }
+    }
+    &--right {
+      @media (max-width: $lg) {
+        display: none;
+      }
+    }
+  }
+  &__main {
+    padding: 0 var(--gap);
+    flex-grow: 1;
+    @media (max-width: $lg) {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+  &__settings {
+    padding: 0 0 0 var(--gap);
+    flex-grow: 1;
+    @media (max-width: $lg) {
+      padding-left: 0;
+    }
+  }
+}

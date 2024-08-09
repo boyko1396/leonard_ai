@@ -1,0 +1,135 @@
+.improvements {
+  padding: 94rem 0 108rem;
+  position: relative;
+  @media (max-width: $lg) {
+    padding: 74rem 0 80rem;
+  }
+  &__container {
+  }
+  &__title {
+    margin: 0 0 54rem;
+    text-align: center;
+    @media (max-width: $lg) {
+      margin-bottom: 26rem;
+    }
+  }
+  &__list {
+    @media (max-width: $md) {
+      margin-right: auto;
+      margin-left: auto;
+    }
+    &-row {
+      margin-bottom: var(--gap-fluid-);
+      @media (max-width: $md) {
+        justify-content: center;
+      }
+    }
+    &-col {
+      margin-bottom: var(--gap-fluid);
+      @media (max-width: $md) {
+        max-width: 50%;
+        flex-basis: 50%;
+      }
+      @media (max-width: $xs) {
+        max-width: 100%;
+        flex-basis: 100%;
+      }
+      &:nth-child(1) {
+        .improvements__card-inner {
+          min-height: 384rem;
+          @media (max-width: $md) {
+            min-height: 0;
+          }
+        }
+      }
+      &:nth-child(2) {
+        .improvements__card-inner {
+          min-height: 500rem;
+          @media (max-width: $md) {
+            min-height: 0;
+          }
+        }
+      }
+      &:nth-child(3) {
+        .improvements__card-inner {
+          min-height: 600rem;
+          @media (max-width: $md) {
+            min-height: 0;
+          }
+        }
+      }
+    }
+  }
+  &__card {
+    @media (max-width: $md) {
+      height: 100%;
+    }
+    &-inner {
+      height: 100%;
+      margin: 0 0 -1rem;
+      padding: 98rem 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-radius: $radiusXs;
+      position: relative;
+      overflow: hidden;
+      z-index: 0;
+      @media (max-width: $md) {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+    &-picture {
+      @extend %img-cover;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      user-select: none;
+      z-index: -1;
+      &:before,
+      &:after {
+        width: 100%;
+        height: 100%;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      &:before {
+        background: rgba($oliveColor, .5);
+        z-index: 2;
+      }
+      &:after {
+        background: rgba($blackFullColor, .5);
+        z-index: 1;
+      }
+    }
+    &-content {
+      padding: 24rem;
+      color: $whiteColor;
+      text-align: center;
+      position: relative;
+      @media (max-width: $md) {
+        padding-top: 92rem;
+        padding-bottom: 96rem;
+      }
+    }
+    &-title {
+      margin: -4rem 0 15rem;
+    }
+    &-text {
+      font-size: var(--fs-5);
+      color: rgba($whiteColor, .75);
+    }
+    &-percent {
+      margin: 0;
+      @media (max-width: $md) {
+        display: none;
+      }
+    }
+  }
+}

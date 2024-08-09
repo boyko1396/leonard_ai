@@ -1,0 +1,16 @@
+.breadcrumbs-page {
+  background: $oliveColor;
+  padding: 16rem 0;
+  color: $whiteColor;
+  &__container {
+  }
+  &__el {
+  }
+  .u-breadcrumbs li {
+    &:not(:last-child) {
+      &:after {
+        content: '\002F';
+      }
+    }
+  }
+}

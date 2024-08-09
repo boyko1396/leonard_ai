@@ -1,0 +1,314 @@
+<aside class="chat-aside chat__aside chat__aside--left">
+  <div class="chat-aside__header">
+    <div class="d-lg-block chat-aside__header-mobile">
+      <a href="/" class="logo chat-aside__header-mobile-logo">
+        <picture class="logo__img">
+          <img src="images/logo-black.svg" width="155" height="35" alt="Leonard AI">
+        </picture>
+      </a>
+      <button type="button" class="js-header-chat-toggle-close d-lg-block chat-aside__header-mobile-toggle">
+        <svg class="u-icon">
+          <use xlink:href="images/icons/icons.svg#close"></use>
+        </svg>
+      </button>
+    </div>
+    <p class="d-lg-none fs-5 chat-aside__title">Инструменты</p>
+    <hr class="d-lg-none chat-aside__hr">
+    <div class="chat-aside__action">
+      <a href="#" class="btn btn--size-md btn--theme-accent chat-aside__action-btn chat-aside__action-btn--new-chat">
+        <span class="btn__inner">
+          <svg class="u-icon btn__icon btn__icon--dir-ltr">
+            <use xlink:href="images/icons/icons.svg#plus-btn"></use>
+          </svg>
+          <span class="btn__title">Новый чат</span>
+        </span>
+      </a>
+    </div>
+    <hr class="d-lg-none chat-aside__hr">
+    <div class="d-lg-block tab-nav chat-aside__header-tab-nav">
+      <ul class="tab-nav__list">
+        <li class="tab-nav__item">
+          <button type="button" class="tab-nav__btn is-active" data-tab-nav-aside="aside-tools">Инструменты</button>
+        </li>
+        <li class="tab-nav__item">
+          <button type="button" class="tab-nav__btn" data-tab-nav-aside="aside-history">История</button>
+        </li>
+      </ul>
+    </div>
+    <div class="d-lg-block tab-nav chat-aside__tab-content" data-tab-content-aside="aside-history">
+      <ul class="tab-nav__list">
+        <li class="tab-nav__item">
+          <button type="button" class="tab-nav__btn is-active" data-subtab-nav-aside="aside-history-chat">Чаты</button>
+        </li>
+        <li class="tab-nav__item">
+          <button type="button" class="tab-nav__btn" data-subtab-nav-aside="aside-history-tools">Инструменты</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="u-scrollbar chat-aside__body">
+    <div class="chat-aside__body-inner">
+      <div class="chat-aside__tab-content is-show" data-tab-content-aside="aside-tools">
+        <nav class="chat-aside__nav" role="navigation">
+          <ul class="chat-aside__nav-list">
+            <li class="chat-aside__nav-item">
+              <a href="chat_images.html" class="chat-aside__nav-link @@class">Генератор изображений</a>
+            </li>
+            <li class="chat-aside__nav-item">
+              <button type="button" data-modal="popup-chat-article-info" class="chat-aside__nav-link">Загрузи и&nbsp;спроси</button>
+            </li>
+            <li class="chat-aside__nav-item">
+              <button type="button" data-modal="popup-chat-link-youtube" class="chat-aside__nav-link">YouTube и&nbsp;спроси</button>
+            </li>
+            <li class="chat-aside__nav-item">
+              <button type="button" data-modal="popup-chat-youtube" class="chat-aside__nav-link">Краткое содержание<br>YouTube-видео</button>
+            </li>
+            <li class="chat-aside__nav-item">
+              <button type="button" data-modal="popup-chat-article" class="chat-aside__nav-link">Краткое содержание статьи</button>
+            </li>
+            <li class="chat-aside__nav-item">
+              <button type="button" data-modal="popup-chat-link" class="chat-aside__nav-link">Вставь ссылку и&nbsp;спроси</button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="chat-aside__tab-content" data-tab-content-aside="aside-history">
+        <div class="chat-aside__subtab-content is-show" data-subtab-content-aside="aside-history-chat">
+          <div class="chat-aside__body-history-item">
+            <p class="chat-aside__body-history-item-title">Сегодня</p>
+            <div class="chat-aside__body-history-item-list">
+              <div class="history-item chat-aside__body-history-item-card">
+                <div class="history-item__inner">
+                  <p class="history-item__title">
+                    <a href="#" class="history-item__link">Составь контент-план для блогера, который ведет лайф-контент, есть...</a>
+                  </p>
+                  <div class="history-item__footer">
+                    <div class="history-item__action">
+                      <button type="button" class="history-item__action-btn">
+                        <svg class="u-icon">
+                          <use xlink:href="images/icons/icons.svg#edit"></use>
+                        </svg>
+                      </button>
+                      <button type="button" class="history-item__action-btn">
+                        <svg class="u-icon">
+                          <use xlink:href="images/icons/icons.svg#delete"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="chat-aside__body-history-item">
+            <p class="chat-aside__body-history-item-title">Предыдущие 7 дней</p>
+            <div class="chat-aside__body-history-item-list">
+              <div class="history-item chat-aside__body-history-item-card">
+                <div class="history-item__inner">
+                  <p class="history-item__title">
+                    <a href="#" class="history-item__link">Составь контент-план для блогера, который ведет лайф-контент, есть...</a>
+                  </p>
+                  <div class="history-item__footer">
+                    <div class="history-item__action">
+                      <button type="button" class="history-item__action-btn">
+                        <svg class="u-icon">
+                          <use xlink:href="images/icons/icons.svg#edit"></use>
+                        </svg>
+                      </button>
+                      <button type="button" class="history-item__action-btn">
+                        <svg class="u-icon">
+                          <use xlink:href="images/icons/icons.svg#delete"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="history-item chat-aside__body-history-item-card">
+                <div class="history-item__inner">
+                  <p class="history-item__title">
+                    <a href="#" class="history-item__link">Составь контент-план для блогера, который ведет лайф-контент, есть...</a>
+                  </p>
+                  <div class="history-item__footer">
+                    <div class="history-item__action">
+                      <button type="button" class="history-item__action-btn">
+                        <svg class="u-icon">
+                          <use xlink:href="images/icons/icons.svg#edit"></use>
+                        </svg>
+                      </button>
+                      <button type="button" class="history-item__action-btn">
+                        <svg class="u-icon">
+                          <use xlink:href="images/icons/icons.svg#delete"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="chat-aside__body-history-item">
+            <p class="chat-aside__body-history-item-title">Предыдущие 30 дней</p>
+            <div class="chat-aside__body-history-item-list">
+              <div class="history-item chat-aside__body-history-item-card">
+                <div class="history-item__inner">
+                  <p class="history-item__title">
+                    <a href="#" class="history-item__link">Составь контент-план для блогера, который ведет лайф-контент, есть...</a>
+                  </p>
+                  <div class="history-item__footer">
+                    <div class="history-item__action">
+                      <button type="button" class="history-item__action-btn">
+                        <svg class="u-icon">
+                          <use xlink:href="images/icons/icons.svg#edit"></use>
+                        </svg>
+                      </button>
+                      <button type="button" class="history-item__action-btn">
+                        <svg class="u-icon">
+                          <use xlink:href="images/icons/icons.svg#delete"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="history-item chat-aside__body-history-item-card">
+                <div class="history-item__inner">
+                  <p class="history-item__title">
+                    <a href="#" class="history-item__link">Составь контент-план для блогера, который ведет лайф-контент, есть...</a>
+                  </p>
+                  <div class="history-item__footer">
+                    <div class="history-item__action">
+                      <button type="button" class="history-item__action-btn">
+                        <svg class="u-icon">
+                          <use xlink:href="images/icons/icons.svg#edit"></use>
+                        </svg>
+                      </button>
+                      <button type="button" class="history-item__action-btn">
+                        <svg class="u-icon">
+                          <use xlink:href="images/icons/icons.svg#delete"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="history-item chat-aside__body-history-item-card">
+                <div class="history-item__inner">
+                  <p class="history-item__title">
+                    <a href="#" class="history-item__link">Составь контент-план для блогера, который ведет лайф-контент, есть...</a>
+                  </p>
+                  <div class="history-item__footer">
+                    <div class="history-item__action">
+                      <button type="button" class="history-item__action-btn">
+                        <svg class="u-icon">
+                          <use xlink:href="images/icons/icons.svg#edit"></use>
+                        </svg>
+                      </button>
+                      <button type="button" class="history-item__action-btn">
+                        <svg class="u-icon">
+                          <use xlink:href="images/icons/icons.svg#delete"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="history-item chat-aside__body-history-item-card">
+                <div class="history-item__inner">
+                  <p class="history-item__title">
+                    <a href="#" class="history-item__link">Составь контент-план для блогера, который ведет лайф-контент, есть...</a>
+                  </p>
+                  <div class="history-item__footer">
+                    <div class="history-item__action">
+                      <button type="button" class="history-item__action-btn">
+                        <svg class="u-icon">
+                          <use xlink:href="images/icons/icons.svg#edit"></use>
+                        </svg>
+                      </button>
+                      <button type="button" class="history-item__action-btn">
+                        <svg class="u-icon">
+                          <use xlink:href="images/icons/icons.svg#delete"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chat-aside__subtab-content" data-subtab-content-aside="aside-history-tools">
+          <div class="chat-aside__body-history-item">
+            <p class="chat-aside__body-history-item-title">Сегодня</p>
+            <div class="chat-aside__body-history-item-list">
+              <div class="history-item chat-aside__body-history-item-card">
+                <div class="history-item__inner">
+                  <p class="history-item__suptitle">Генерация изображений</p>
+                  <p class="history-item__title">
+                    <a href="#" class="history-item__link">Составь контент-план для блогера, который ведет лайф-контент, есть...</a>
+                  </p>
+                  <div class="history-item__footer">
+                    <div class="history-item__action">
+                      <button type="button" class="history-item__action-btn">
+                        <svg class="u-icon">
+                          <use xlink:href="images/icons/icons.svg#edit"></use>
+                        </svg>
+                      </button>
+                      <button type="button" class="history-item__action-btn">
+                        <svg class="u-icon">
+                          <use xlink:href="images/icons/icons.svg#delete"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="chat-aside__body-history-item">
+            <p class="chat-aside__body-history-item-title">Предыдущие 7 дней</p>
+            <div class="chat-aside__body-history-item-list">
+              <div class="history-item chat-aside__body-history-item-card">
+                <div class="history-item__inner">
+                  <p class="history-item__suptitle">YouTube и спроси</p>
+                  <p class="history-item__title">
+                    <a href="#" class="history-item__link">Составь контент-план для блогера, который ведет лайф-контент, есть...</a>
+                  </p>
+                  <div class="history-item__footer">
+                    <div class="history-item__action">
+                      <button type="button" class="history-item__action-btn">
+                        <svg class="u-icon">
+                          <use xlink:href="images/icons/icons.svg#edit"></use>
+                        </svg>
+                      </button>
+                      <button type="button" class="history-item__action-btn">
+                        <svg class="u-icon">
+                          <use xlink:href="images/icons/icons.svg#delete"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="chat-aside__footer">
+    <a href="chat_settings.html" class="btn btn--size-md btn--theme-accent-outline chat-aside__action-btn chat-aside__action-btn--settings @@class_settings">
+      <span class="btn__inner">
+        <svg class="u-icon btn__icon btn__icon--dir-ltr">
+          <use xlink:href="images/icons/icons.svg#settings"></use>
+        </svg>
+        <span class="btn__title">Настройки</span>
+      </span>
+    </a>
+    <a href="#" class="d-lg-block btn btn--size-md btn--theme-accent chat-aside__action-btn  chat-aside__action-btn--exit">
+      <span class="btn__inner">
+        <span class="btn__title">Выйти</span>
+      </span>
+    </a>
+  </div>
+</aside>

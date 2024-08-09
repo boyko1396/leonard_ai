@@ -1,0 +1,86 @@
+.contacts {
+  padding: 80rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+  color: $greyDarkColor;
+  position: relative;
+  @media (max-width: $lg) {
+    padding: 64rem 0;
+  }
+  &__bg {
+    @extend %img-cover, %bg-overlay;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &__container {
+  }
+  &__block {
+    background: $beigeColor;
+    padding: 80rem 48rem;
+    border-radius: $radiusXs;
+    @media (max-width: $md) {
+      padding: 48rem 32rem;
+    }
+    @media (max-width: $sm) {
+      padding: 46rem 16rem;
+    }
+    &-title {
+      margin: 0 0 4rem;
+      color: $accentColor;
+      text-align: center;
+      @media (max-width: $sm) {
+        margin-bottom: 12rem;
+        font-size: var(--fs-3);
+        text-align: left;
+      }
+    }
+    &-text {
+      margin: 0 0 32rem;
+      font-size: var(--fs-5);
+      text-align: center;
+      @media (max-width: $lg) {
+        font-size: var(--fs-default);
+      }
+      @media (max-width: $sm) {
+        text-align: left;
+      }
+    }
+    &-form {
+      --gap: 6rem;
+      --gap-: -6rem;
+      &-row {
+        @media (max-width: $lg) {
+          margin-bottom: -12rem;
+        }
+      }
+      &-col {
+        @media (max-width: $lg) {
+          max-width: 50%;
+          margin-bottom: 12rem;
+          flex-basis: 50%;
+        }
+        @media (max-width: $sm) {
+          max-width: 100%;
+          flex-basis: 100%;
+        }
+      }
+      &-input {
+      }
+      &-btn {
+        width: 100%;
+        color: $beigeColor;
+        @media (max-width: $sm) {
+          width: auto;
+        }
+      }
+    }
+    &-privacy {
+      margin: 12rem 0 0;
+    }
+  }
+}
