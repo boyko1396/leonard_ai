@@ -962,6 +962,7 @@
 
 .target-audience-card {
   border-radius: $radiusSm;
+  position: relative;
   &--theme {
     &-beige {
       background: $beigeColor;
@@ -997,7 +998,7 @@
     }
   }
   &__btn {
-    @extend %btn-reset;
+    @extend %link-cover, %btn-reset;
     background: $beigeColor;
     max-width: 64rem;
     min-height: 64rem;
@@ -1007,6 +1008,14 @@
     flex: 0 0 64rem;
     color: $accentColor;
     border-radius: $radiusXs;
+    transition: $transition;
+    transition-property: color;
+    cursor: pointer;
+    &:hover {
+      @media (min-width: $lg-mf) {
+        color: $whiteColor;
+      }
+    }
     .u-icon {
       width: 24rem;
       height: 24rem;

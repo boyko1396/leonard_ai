@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
-  <link rel="stylesheet" href="css/style.min.css??=v=20240809110014">
+  <link rel="stylesheet" href="css/style.min.css??=v=20240813153645">
   <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
@@ -33,7 +33,7 @@
               <div class="header-chat__breadcrumbs u-breadcrumbs">
                 <ul class="u-breadcrumbs__list" itemscope itemtype="https://schema.org/BreadcrumbList">
                   <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a href="/" itemprop="item">
+                    <a href="chat.html" itemprop="item">
                       <span itemprop="name">Главная</span>
                     </a>
                     <meta itemprop="position" content="1"></li>
@@ -56,7 +56,7 @@
                 <use xlink:href="images/icons/icons.svg#menu-open"></use>
               </svg>
             </button>
-            <a href="#" class="btn btn--theme-beige btn--size-xs d-lg-block header-chat__btn-new-chat">
+            <a href="chat.html" class="btn btn--theme-beige btn--size-xs d-lg-block header-chat__btn-new-chat">
               <span class="btn__inner">
                 <span class="btn__title">Новый чат</span>
                 <svg class="u-icon btn__icon btn__icon--dir-rtl">
@@ -83,7 +83,7 @@
               <p class="fs-5 chat-aside__title d-lg-none">Инструменты</p>
               <hr class="chat-aside__hr d-lg-none">
               <div class="chat-aside__action">
-                <a href="#" class="btn btn--theme-accent btn--size-md chat-aside__action-btn chat-aside__action-btn--new-chat">
+                <a href="chat.html" class="btn btn--theme-accent btn--size-md chat-aside__action-btn chat-aside__action-btn--new-chat">
                   <span class="btn__inner">
                     <svg class="u-icon btn__icon btn__icon--dir-ltr">
                       <use xlink:href="images/icons/icons.svg#plus-btn"></use>
@@ -96,7 +96,7 @@
               <div class="d-lg-block tab-nav chat-aside__header-tab-nav">
                 <ul class="tab-nav__list">
                   <li class="tab-nav__item">
-                    <button type="button" class="is-active tab-nav__btn" data-tab-nav-aside="aside-tools">Инструменты</button>
+                    <button type="button" class="tab-nav__btn is-active" data-tab-nav-aside="aside-tools">Инструменты</button>
                   </li>
                   <li class="tab-nav__item">
                     <button type="button" class="tab-nav__btn" data-tab-nav-aside="aside-history">История</button>
@@ -106,7 +106,7 @@
               <div class="d-lg-block tab-nav chat-aside__tab-content" data-tab-content-aside="aside-history">
                 <ul class="tab-nav__list">
                   <li class="tab-nav__item">
-                    <button type="button" class="is-active tab-nav__btn" data-subtab-nav-aside="aside-history-chat">Чаты</button>
+                    <button type="button" class="tab-nav__btn is-active" data-subtab-nav-aside="aside-history-chat">Чаты</button>
                   </li>
                   <li class="tab-nav__item">
                     <button type="button" class="tab-nav__btn" data-subtab-nav-aside="aside-history-tools">Инструменты</button>
@@ -712,22 +712,6 @@
               </div>
             </div>
             <div class="chat-main__footer">
-              <div class="chat-main__footer-action">
-                <div class="chat-main__footer-action-version chat-version chat-version--size-md chat-version--theme-white js-chat-version">
-                  <div class="chat-version__inner">
-                    <div class="chat-version__dropdown">
-                      <button type="button" data-version="3.5" class="is-active chat-version__dropdown-btn js-chat-version-switch">GPT-3.5</button>
-                      <button type="button" data-version="4o" class="chat-version__dropdown-btn js-chat-version-switch">GPT-4o</button>
-                    </div>
-                    <button type="button" class="chat-version__toggle js-chat-version-toggle">
-                      <svg class="u-icon chat-version__toggle-icon">
-                        <use xlink:href="images/icons/icons.svg#arrow-type-3"></use>
-                      </svg>
-                      <span class="chat-version__toggle-title"></span>
-                    </button>
-                  </div>
-                </div>
-              </div>
               <form action="#" class="chat-main__message">
                 <textarea name="message" rows="" cols="" id="message-textarea" class="u-scrollbar chat-main__message-textarea js-chat-textarea u-textarea u-textarea--size-md u-textarea--theme-white" placeholder="Напишите ваше сообщение"></textarea>
                 <div class="chat-main__message-aside">
@@ -1059,7 +1043,7 @@
                     <span class="btn__title">Google</span>
                   </span>
                 </button>
-                <a href="auth_login_form.html" class="btn-auth btn-auth--size-xs btn-auth--theme-white login-block__sc-btn">
+                <a href="auth_registration_form.html" class="btn-auth btn-auth--size-xs btn-auth--theme-white login-block__sc-btn">
                   <span class="btn__inner">
                     <span class="btn__icon btn__icon--dir-ltr">
                       <svg class="u-icon">
@@ -1413,6 +1397,6 @@
     </div>
   </div>
 
-  <script src="js/app.min.js??=v=20240809110014"></script>
+  <script src="js/app.min.js??=v=20240813153645"></script>
 </body>
 </html>
